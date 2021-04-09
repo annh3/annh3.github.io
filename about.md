@@ -21,7 +21,7 @@ Publications:
 * [Comparison of segmentation-free and segmentation-dependent computer-aided diagnosis of breast masses on a public mammography dataset](https://pubmed.ncbi.nlm.nih.gov/33309994/) with Rebecca S. Lee, Jared A. Dunnmon, Siyi Tang, Chris Ré, and Daniel Rubin
 
 Manuscripts:
-* [Note on the Necessity of Correlation in PCP Queries](https://github.com/annh3/annh3.github.io/blob/15b9605ff5d7ab9e3d6762a3b109c75695592a4c/files/pcp_query_structure.pdf)
+* [Note on the Necessity of Correlation in PCP Queries](https://annhe.xyz/files/pcp_query_structure.pdf)
 
 ## Photography
 
