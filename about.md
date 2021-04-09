@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Hi! I'm Ann He.
+title: About
 ---
 
-I am computer scientist, photographer, writer, runner, and philosophy lover. Born in the hot, humid city of Chengdu, Sichuan, and raised in the even more hot and humid city Houston, Texas, I now call Northern California my home. Feminism and egalitarianism are two broad world-views I align with. Furthermore, I'm convinced that one can always find [practical means to enact idealistic visions](https://annhe.substack.com/p/practical-idealism), and I hope to advance gender equality as well as science & technology in my life.
+
+Hi! I'm Ann He. I am computer scientist, photographer, writer, runner, and philosophy lover. Born in the hot, humid city of Chengdu, Sichuan, and raised in the even more hot and humid city Houston, Texas, I now call Northern California my home. Feminism and egalitarianism are two broad world-views I align with. Furthermore, I'm convinced that one can always find [practical means to enact idealistic visions](https://annhe.substack.com/p/practical-idealism), and I hope to advance gender equality as well as science & technology in my life.
 
 ## Writing 
 
@@ -20,7 +21,7 @@ Publications:
 * [Comparison of segmentation-free and segmentation-dependent computer-aided diagnosis of breast masses on a public mammography dataset](https://pubmed.ncbi.nlm.nih.gov/33309994/) with Rebecca S. Lee, Jared A. Dunnmon, Siyi Tang, Chris Ré, and Daniel Rubin
 
 Manuscripts:
-* [Note on the Necessity of Correlation in PCP Queries](files/pcp_query_structure.pdf)
+* [Note on the Necessity of Correlation in PCP Queries](https://github.com/annh3/annh3.github.io/blob/15b9605ff5d7ab9e3d6762a3b109c75695592a4c/files/pcp_query_structure.pdf)
 
 ## Photography
 
