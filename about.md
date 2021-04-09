@@ -1,30 +1,26 @@
 ---
 layout: page
-title: About
+title: Hi! I'm Ann He.
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+I am computer scientist, photographer, writer, runner, and philosophy lover. Born in the hot, humid city of Chengdu, Sichuan, and raised in the even more hot and humid city Houston, Texas, I now call Northern California my home. Feminism and egalitarianism are two broad world-views I align with. Furthermore, I'm convinced that one can always find [practical means to enact idealistic visions](https://annhe.substack.com/p/practical-idealism), and I hope to advance gender equality as well as science & technology in my life.
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+## Writing 
 
-There are currently two themes built on Poole:
+From time to time, I try my hand at creative writing. A long time ago, I wrote a story called "Twins" which appeared in [this](https://issuu.com/achemagazine/docs/january2011) issue of Ache Magaine.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+Since *this* blog will be dedicated mostly to posts on computer science, my current (informal) writing can be found at my substack [dinner guests](https://annhe.substack.com/).
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+## Academic
 
-## Setup
+I graduated from Stanford University in 2017 with a bachelors in [symbolic systems](https://symsys.stanford.edu/about/span-dig-deep-solve-complex-problems) and a minor in mathematics, and in 2019 with a masters in computer science.
 
-Some fun facts about the setup of this project include:
+Publicactions:
+* [Learning Dependency Structures for Weak Supervision Models](https://arxiv.org/abs/1903.05844) with Paroma Varma, Fred Sala, Alex Ratner, and Chris Ré
 
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
+Manuscripts:
+* Note on the Necessity of Correlation in PCP Queries
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
+## Photography
 
-Thanks for reading!
+Photography was a big, big part of my life in high school, and I accredit it helping me come to an understanding of myself as a creative person. Most of my work, which can be accessed [here](http://annhephoto.com), falls under the category of fashion photography, but I also experimented with documenting protests, and some portraits. In my photos, I am drawn to capturing energies, moods, personalities, and cinematic moments. 
