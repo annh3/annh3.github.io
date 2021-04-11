@@ -9,8 +9,8 @@ permalink:        pretty
 title:            Ann He
 tagline:          ''
 description:      ''
-url:              annh3.github.io
-baseurl:          /
+url:              "https://annh3.github.io"
+baseurl:          "/"
 
 author:
   name:           'Ann He'
