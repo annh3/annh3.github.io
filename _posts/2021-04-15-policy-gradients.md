@@ -237,13 +237,13 @@ Then
 
 $$\begin{align*}
 V^{\pi_{i+1}} & \ge L_{\pi_{i}}(\pi_{i+1}) - \dfrac{2 \epsilon \gamma}{(1-\gamma)^2} D_{KL}^{max}(\pi_{i}, \pi_{i+1}) \\
-\end{align*}
-And subtracting $V^{\pi_{i}}$ from both sides
-\begin{align*}
+\end{align*}$$
+And subtracting $$V^{\pi_{i}}$$ from both sides
+$$\begin{align*}
 V^{\pi_{i+1}} - V^{\pi_{i}} & \ge M_{i}(\pi_{i+1}) - M_{i}(\pi_{i})\\
 \end{align*}$$
 
-Since $M_i(\pi_i) =  V^{\pi_i}$.
+Since $$M_i(\pi_i) =  V^{\pi_i}$$.
 
 Instead of optimizing $$M$$, which includes a penalty term for the KL divergence, TRPO optimizes against a constraint on the KL divergence. There are sample-based ways to estimate the objective and constraint, which you can read about in John's PhD thesis.
 
@@ -267,7 +267,7 @@ $$g(\epsilon,A^{\pi_{\theta_{k}}}(s,a)) = clip \big(\dfrac{\pi_{\theta}(a|s)}{\p
 
 We can view the clipping term as analogous to KL-constraining the old and new policies in TRPO. Taking the of min the clipped objective and unclipped objective \[cite PPO paper\] corresponds to taking a pessimistic (i.e. lower) bound on the original object. In our implementation of PPO-clip, we set $\epsilon=0.2$, which was shown in the PPO paper to lead to the best average performance.
 
-### PPO code here!
+Here's a snippet of the PPO update--
 ```
 def update_policy(self, observations, actions, advantages, prev_logprobs):
 
