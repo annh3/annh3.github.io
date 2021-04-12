@@ -17,6 +17,7 @@ author:
   url:            https://twitter.com/annnnhe
 
 paginate:         5
+excerpt_separator: '<!--excerpt-->'
 
 # Custom vars
 version:          2.1.0
