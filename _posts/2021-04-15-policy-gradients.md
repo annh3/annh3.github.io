@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Understanding and Implementing Policy Gradients
-published: false
+published: true
 usemathjax: true
 ---
 
