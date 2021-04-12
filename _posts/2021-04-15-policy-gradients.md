@@ -45,3 +45,17 @@ $$\begin{align*}
 \end{align*}$$
 
 Note that the dynamics of the environment $$P$$ disappears, as it does not depend on $$\theta$$, which shows that policy gradients can be used in a model-free manner.
+
+Putting the pieces together, the gradient of the expected return is
+
+$$\nabla_{\theta} J(\pi_{\theta}) = \mathbb{E}_{\tau \sim \pi_{\theta}} [ R(\tau) \sum_{t=0}^T \nabla_{\theta} \log \pi_{\theta}(a_t|s_t)]$$
+
+The log probability of each action is weighted by the rewards associated with it. The gradient has an intuitive interpretation--it encourages us to increase the probability of actions which lead to high expected return.
+
+Conveniently, $$\nabla_{\theta} J$$ turns out to have the form of an expectation. Because of this, as long as we can take the gradient of the log of our policy, we can estimate it with [Monte Carlo simulation](https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/monte-carlo-methods-mathematical-foundations/expected-value) using samples from our environment--i.e.
+
+$$\hat{g} = \dfrac{1}{|\mathcal{D}|} \sum_{\tau \in \mathcal{D}} \sum_{t=0}^T \nabla_{\theta} \log \pi_{\theta}(a_t|s_t) R(\tau)$$
+
+Where $$\mathcal{D}$$ is a dataset of trajectories.
+
+### Policy Network
