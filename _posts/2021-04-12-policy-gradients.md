@@ -100,6 +100,7 @@ Var(R_{t+1}) &= \sum_{i=1}^{t+1} Var(r_i) + \sum_{i \ne j} Cov(r_i, r_j) \\
             &= Var(R_t) + Var(r_{t+1}) + \sum_{i=0}^t Cov(r_i, r_{t+1}) \\
             & \ge  Var(R_t) \\
 \end{align*}$$
+
 (as long as $$\sum_{i=0}^t Cov(r_i, r_{t+1})$$ is non-negative.)
 
 If we have high variance in our estimate of the policy gradient, then the update will cause the policy to fluctuate across updates.
