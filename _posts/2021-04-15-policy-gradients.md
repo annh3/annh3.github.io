@@ -22,3 +22,16 @@ The goal of reinforcement learning is for an agent to learn to act in a dynamic 
 Formally define a trajectory $$\tau$$ as a tuple $$(s_0, a_0, r_0, s_1, a_1, ..., r_T)$$ denoting a sequence of state-action-rewards observed over the course of some episode of interaction with the agent's environment, and let $$R(\tau)$$ denote the finite-horizon return, aka cumulative sum of rewards over finite timesteps. Then our goal is the maximize the _expected_ finite-horizon return where the expectation is over trajectories sampled from the stochastic policy $$\pi_{\theta}$$ (here we let $$\theta$$ denote the parameters of the policy $$\pi$$)--i.e.
 
 $$ max_{\theta} J(\pi_{\theta}) = \mathbb{E}_{\tau \sim \pi_{\theta}} [R(\tau)] $$
+
+In order to optimize $$J$$ using gradient ascent, we need an efficiently computable form of its gradient. First, let's compute an analytical form of the gradient, then see how we can approximate it with sampling.
+
+We use the log-derivative trick to push a form of the gradient of the policy into the the gradient of $$J$$.
+
+I liked Daniel Takeshi's explanation of it--"the log derivative trick tells us how to insert a log into an expectation when starting from $$\nabla_{\theta} \mathbb{E}[f(x)]$$"
+
+$$\begin{align*}
+\nabla_{\theta} \mathbb{E}[f(x)] &= \nabla_{\theta} \int p_{\theta}(x) f(x) dx \\
+&= \int \dfrac{p_{\theta}(x)}{p_{\theta}(x)} \nabla_{\theta} p_{\theta}(x) f(x) dx \\
+&= \int p_{\theta}(x) \nabla_{\theta} \log p_{\theta}(x) f(x) dx \\
+&= \mathbb{E}[\nabla_{\theta} \log p_{\theta}(x) f(x)]
+\end{align*}$$
