@@ -35,3 +35,13 @@ $$\begin{align*}
 &= \int p_{\theta}(x) \nabla_{\theta} \log p_{\theta}(x) f(x) dx \\
 &= \mathbb{E}[\nabla_{\theta} \log p_{\theta}(x) f(x)]
 \end{align*}$$
+
+In the gradient of $$J$$ we are concerned with the gradient of the log probability of trajectories, so we derive its form now.
+
+$$\begin{align*}
+\nabla_{\theta} \log p_{\theta}(\tau) &= \nabla_{\theta} \log \left( \mu(s_{0}) \prod_{t=0}^{T-1} \pi_{\theta}(a_t|s_t) P(s_{t+1|s_t,a_t}) \right) \\
+&= \nabla_{\theta} \left( \log \mu_{s_0} + \sum_{t=0}^{T-1} (\log \pi_{\theta}(a_t | s_t) + \log P(s_{t+1} | s_t, a_t))\right) \\
+&= \nabla_{\theta} \sum_{t=0}^{T-1} \log \pi_{\theta}(a_t | s_t) \\
+\end{align*}$$
+
+Note that the dynamics of the environment $$P$$ disappears, as it does not depend on $$\theta$$, which shows that policy gradients can be used in a model-free manner.
