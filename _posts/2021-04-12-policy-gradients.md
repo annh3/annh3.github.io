@@ -202,7 +202,7 @@ Where $$\eta_{\pi}(\pi)$$ is the discounted sum of rewards from following $$\pi$
 
 Note that $$\mathbb{E}_{\tau \sim \tilde{\pi}} = \mathbb{E}_{s_0, a_0, s_1, a_1, ... \sim \tilde{\pi}}$$.
 
-If we define $$P(s_t = s \| \tilde{\pi})$$ to be the probability that we end up in state $$s$$ at time $$t$$ by following $$\pi$$, then we can conveniently rewrite $$\eta_{\pi}(\tilde{\pi})$$ as 
+If we define $$P(s_t = s \vert \tilde{\pi})$$ to be the probability that we end up in state $$s$$ at time $$t$$ by following $$\pi$$, then we can conveniently rewrite $$\eta_{\pi}(\tilde{\pi})$$ as 
 
 $$\begin{align*}
 \eta_{\pi}(\tilde{\pi}) &= \eta_{\pi}(\pi) + \mathbb{E}_{s_0, a_0, s_1, a_1, ... \sim \tilde{\pi}}[\sum_{t=0}^{\infty} \gamma^{t} A_{\pi}(s_{t}, a_{t})] \\
@@ -211,7 +211,7 @@ $$\begin{align*}
 &= \eta_{\pi}(\pi) +  \sum_{s} p_{\tilde{\pi}}(s) \sum_{a} \tilde{\pi}(a|s) \gamma^{t} \mathcal{A}_{\pi}(s,a)
 \end{align*}$$
 
-Where $$p_{\tilde{\pi}}(s) = P(s_0 = s \| \tilde{\pi}) + \gamma \cdot P(s_1 = s | \tilde{\pi}) + ...$$ is the discounted state visitation frequency. From the formulation above, we can see that any policy update that has positive expected advantage at every state is guaranteed to improve policy performance.
+Where $$p_{\tilde{\pi}}(s) = P(s_0 = s \vert \tilde{\pi}) + \gamma \cdot P(s_1 = s \vert \tilde{\pi}) + ...$$ is the discounted state visitation frequency. From the formulation above, we can see that any policy update that has positive expected advantage at every state is guaranteed to improve policy performance.
 
 However, in our computation of the policy update, we cannot compute $$p_{\tilde{\pi}}(s)$$ as we do not have samples from the new policy $$\tilde{\pi}$$. We make a local approximation to $$\eta$$ by using $$p_{\pi}(s)$$ instead, yielding the modified objective
 
