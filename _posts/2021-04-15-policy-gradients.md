@@ -59,3 +59,34 @@ $$\hat{g} = \dfrac{1}{|\mathcal{D}|} \sum_{\tau \in \mathcal{D}} \sum_{t=0}^T \n
 Where $$\mathcal{D}$$ is a dataset of trajectories.
 
 ### Policy Network
+
+The policy is represented as a multi-layer perceptron, since we are interested in acting in high dimensional state spaces with continuous actions. (On an aside, a less utilitarian and very beautiful thing about deep RL is that it connects neuroscience with artificial intelligence. [Here's](https://deepmind.com/blog/article/Dopamine-and-temporal-difference-learning-A-fruitful-relationship-between-neuroscience-and-AI) recent work on connections between TD-learning and dopamine in animal learning.)
+
+```
+def build_mlp(input_size, output_size, n_layers, size):    
+    modules = OrderedDict()
+    modules['Linear_Input'] = nn.Linear(input_size, size)
+    modules['ReLU_Input'] = nn.ReLU()
+    for i in range(n_layers):
+        modules['Linear_'+str(i)] = nn.Linear(size, size)
+        modules['ReLU_'+str(i)] = nn.ReLU()
+    modules['Linear_Output'] = nn.Linear(size,output_size)
+    sequential = nn.Sequential(modules)
+    return sequential
+
+policy_network = build_mlp(observation_dim, 1, n_layers, layer_size)
+```
+
+Below is the implementation of the policy gradient update. Note here that advantage denotes $\sum_{t' = t}^T r_{t'}- V^{\pi}(s_t)$
+
+```
+def update_policy(self, observations, actions, advantages):
+
+        self.optimizer.zero_grad()
+        res = self.policy.action_distribution(observations).log_prob(actions) 
+
+        loss = -(res * advantages).mean()
+        loss.backward()
+        self.optimizer.step()
+```
+### Variance
