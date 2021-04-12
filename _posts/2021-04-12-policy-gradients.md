@@ -266,7 +266,7 @@ where
 
 $$g(\epsilon,A^{\pi_{\theta_{k}}}(s,a)) = clip \big(\dfrac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)}, 1-\epsilon, 1+\epsilon \big)$$
 
-We can view the clipping term as analogous to KL-constraining the old and new policies in TRPO. Taking the of min the clipped objective and unclipped objective \[cite PPO paper\] corresponds to taking a pessimistic (i.e. lower) bound on the original object. In our implementation of PPO-clip, we set $\epsilon=0.2$, which was shown in the PPO paper to lead to the best average performance.
+We can view the clipping term as analogous to KL-constraining the old and new policies in TRPO. Taking the of min the clipped objective and unclipped objective corresponds to taking a pessimistic (i.e. lower) bound on the original object. In our implementation of PPO-clip, we set $$\epsilon=0.2$$, which was shown in the PPO [paper](https://arxiv.org/abs/1707.06347) to lead to the best average performance.
 
 Here's a snippet of the PPO update--
 ```
