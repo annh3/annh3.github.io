@@ -77,7 +77,7 @@ def build_mlp(input_size, output_size, n_layers, size):
 policy_network = build_mlp(observation_dim, 1, n_layers, layer_size)
 ```
 
-Below is the implementation of the policy gradient update. Note here that advantage denotes $\sum_{t' = t}^T r_{t'}- V^{\pi}(s_t)$
+Below is the implementation of the policy gradient update. Note here that advantage denotes $$\sum_{t' = t}^T r_{t'}- V^{\pi}(s_t)$$
 
 ```
 def update_policy(self, observations, actions, advantages):
