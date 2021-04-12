@@ -4,19 +4,22 @@ title: Home
 ---
 
 <div class="posts">
-  {% for post in paginator.posts %}
+{% for post in paginator.posts %}
   <div class="post">
     <h1 class="post-title">
-      <a href="{{ post.url }}">
+      <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-date">{{ post.date | date: '%b %-d, %Y' }}</span>
 
     {{ post.excerpt }}
+    {% if post.content contains site.excerpt_separator %}
+      <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+    {% endif %}
   </div>
-  {% endfor %}
+{% endfor %}
 </div>
 
 <div class="pagination">
