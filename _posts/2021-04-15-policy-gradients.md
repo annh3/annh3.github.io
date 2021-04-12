@@ -18,3 +18,7 @@ Credits go to Daniel Takeshi's blog, John Schulman's PhD thesis, OpenAI's Spinni
 Let's first implement vanilla policy gradient (REINFORCE), the backbone of these three methods. (My acknowledgements go to Daniel Takeshi, since this section is highly based off of his blog post.)
 
 The goal of reinforcement learning is for an agent to learn to act in a dynamic environment so as to maximize its expected cumulative reward over the course of a time-horizon. Policy gradient methods solve the problem of control by directly learning the policy $$\pi: \mathcal{S} \rightarrow \mathcal{A}$$ from observations of rewards obtained by interacting with the environment. 
+
+Formally define a trajectory $$\tau$$ as a tuple $$(s_0, a_0, r_0, s_1, a_1, ..., r_T)$$ denoting a sequence of state-action-rewards observed over the course of some episode of interaction with the agent's environment, and let $$R(\tau)$$ denote the finite-horizon return, aka cumulative sum of rewards over finite timesteps. Then our goal is the maximize the _expected_ finite-horizon return where the expectation is over trajectories sampled from the stochastic policy $$\pi_{\theta}$$ (here we let $$\theta$$ denote the parameters of the policy $$\pi$$)--i.e.
+
+$$ max_{\theta} J(\pi_{\theta}) = \mathbb{E}_{\tau \sim \pi_{\theta}} [R(\tau)] $$
