@@ -158,9 +158,9 @@ The cartpole and pendulum results do not really demonstrate the difference betwe
 
 ### Empirical Results: Baseline vs no Baseline
 
-![My image Name](/assets/images/myimage.jpg)
-![My image Name](/assets/images/myimage.jpg)
-![My image Name](/assets/images/myimage.jpg)
+![My image Name](/assets/results-cartpole-old.png)
+![My image Name](/assets/results-pendulum-old.png)
+![My image Name](/assets/results-cheetah-old.png)
 
 ### Variance Reduction 3: TD Error
 
@@ -282,8 +282,8 @@ def update_policy(self, observations, actions, advantages, prev_logprobs):
 
 ### Experiment: PP0 vs VPG
 
-![My image Name](/assets/images/myimage.jpg)
-![My image Name](/assets/images/myimage.jpg)
-![My image Name](/assets/images/myimage.jpg)
+![My image Name](/assets/results-cartpole-ppo-vpg.png)
+![My image Name](/assets/results-pendulum-ppo-vpg.png)
+![My image Name](/assets/results-cheetah-ppo-vpg.png)
 
 The experiment in cartpole most clearly shows the advantages of PPO over VPG, espectially near the end of the experiment. One hypothesis for why PPO's performance decays near the end is that the large steps in the updates could have caused settling on local optima.  (Viewing videos of the training performance could help one observe any high-level behaviors that emerge.) As with the case in the VPG baseline / no-baseline experiments, there's a bit too much noise in the pendulum environment to draw conclusions. In the cheetah environment, PPO initially outperforms VPG, though near the end, both are brittle. Note that the performance we observe for PPO is not strictly monotonic. The clipped objective does constrain the size of updates, though there are no formal guarantees in the style of the TRPO guarantee. Work on PPO addresses this issue in a number of ways, including early stopping. It is also worthy to note that policy gradients are sensitive to batch size, advantage normalization, and policy architecture. /[cite /]
