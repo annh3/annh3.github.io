@@ -140,7 +140,7 @@ Based on these approximations, we can see that that a well-chosen baseline can d
 
 ### Baseline Refitting
 
-Note that we will have to update the baseline, $V^{\pi}(s_t)$ every time we perform a policy update. This is because we want our estimate of the value function to be as accurate as possible, given the data we have. To do so, we compute the mean squared error loss between a forward pass of the network (current value estimate) and the most recent returns we have.
+Note that we will have to update the baseline, $$V^{\pi}(s_t)$$ every time we perform a policy update. This is because we want our estimate of the value function to be as accurate as possible, given the data we have. To do so, we compute the mean squared error loss between a forward pass of the network (current value estimate) and the most recent returns we have.
 
 ```
 def update_baseline(self, returns, observations):
