@@ -274,7 +274,7 @@ def update_policy(self, observations, actions, advantages, prev_logprobs):
 
         self.optimizer.zero_grad()
         res = self.policy.action_distribution(observations).log_prob(actions) 
-        ratio = torch.div(res,prev_logprobs) # Is this the issue
+        ratio = torch.div(res,prev_logprobs) 
         clipped_ratio = torch.clamp(ratio, 1-self.epsilon_clip, 1+self.epsilon_clip)
         loss = -(torch.min(ratio,clipped_ratio) * advantages).mean()
         loss.backward()
