@@ -10,6 +10,7 @@ title:            Ann He
 tagline:          ''
 description:      ''
 url:              "https://annh3.github.io"
+math_engine:      mathjax
 
 author:
   name:           'Ann He'
