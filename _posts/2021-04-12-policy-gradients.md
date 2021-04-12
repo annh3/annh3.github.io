@@ -177,7 +177,7 @@ $$A^{\pi}(s_t,a_t) = Q^{\pi}(s_t,a_t) - V^{\pi}(s_t)$$
 
 Instead of summing up over all future rewards in an episode, TD uses the reward at time step $$t$$ as well as the current estimate of $$V$$ to estimate the advantage. This is called bootstrapping, in contrast with the entire roll-outs or simulations that Monte Carlo performs
 
-Let $$\delta_{t}^{\hat{V}} = r_t + \gamma \hat{V}(s_{t+1}) - \hat{V}(s_{t})$$. Then if $$\hat{V} = V^{\pi}$$, $$\delta_{t}^{\hat{V}}$$ is an unbiased estimator of $$A^{\pi}$$. However, in practice, $$\hat{V}$$ is an imperfect estimate of $$V^{\pi}$ and $\delta_{t}^{\hat{V}}$$ ends up being biased because of it.
+Let $$\delta_{t}^{\hat{V}} = r_t + \gamma \hat{V}(s_{t+1}) - \hat{V}(s_{t})$$. Then if $$\hat{V} = V^{\pi}$$, $$\delta_{t}^{\hat{V}}$$ is an unbiased estimator of $$A^{\pi}$$. However, in practice, $$\hat{V}$$ is an imperfect estimate of $$V^{\pi}$$ and $$\delta_{t}^{\hat{V}}$$ ends up being biased because of it.
 
 We can actually interpolate between TD and MC by controlling the number of time steps we sum rewards over before using the bootstrapped estimate of future rewards. Define
 
