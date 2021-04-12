@@ -158,9 +158,9 @@ The cartpole and pendulum results do not really demonstrate the difference betwe
 
 ### Empirical Results: Baseline vs no Baseline
 
-(img 1)
-(img 2)
-(img 3)
+![My image Name](/assets/images/myimage.jpg)
+![My image Name](/assets/images/myimage.jpg)
+![My image Name](/assets/images/myimage.jpg)
 
 ### Variance Reduction 3: TD Error
 
@@ -268,11 +268,22 @@ $$g(\epsilon,A^{\pi_{\theta_{k}}}(s,a)) = clip \big(\dfrac{\pi_{\theta}(a|s)}{\p
 We can view the clipping term as analogous to KL-constraining the old and new policies in TRPO. Taking the of min the clipped objective and unclipped objective \[cite PPO paper\] corresponds to taking a pessimistic (i.e. lower) bound on the original object. In our implementation of PPO-clip, we set $\epsilon=0.2$, which was shown in the PPO paper to lead to the best average performance.
 
 ### PPO code here!
+```
+def update_policy(self, observations, actions, advantages, prev_logprobs):
+
+        self.optimizer.zero_grad()
+        res = self.policy.action_distribution(observations).log_prob(actions) 
+        ratio = torch.div(res,prev_logprobs) # Is this the issue
+        clipped_ratio = torch.clamp(ratio, 1-self.epsilon_clip, 1+self.epsilon_clip)
+        loss = -(torch.min(ratio,clipped_ratio) * advantages).mean()
+        loss.backward()
+        self.optimizer.step()
+```
 
 ### Experiment: PP0 vs VPG
 
-(img 1)
-(img 2)
-(img 3)
+![My image Name](/assets/images/myimage.jpg)
+![My image Name](/assets/images/myimage.jpg)
+![My image Name](/assets/images/myimage.jpg)
 
 The experiment in cartpole most clearly shows the advantages of PPO over VPG, espectially near the end of the experiment. One hypothesis for why PPO's performance decays near the end is that the large steps in the updates could have caused settling on local optima.  (Viewing videos of the training performance could help one observe any high-level behaviors that emerge.) As with the case in the VPG baseline / no-baseline experiments, there's a bit too much noise in the pendulum environment to draw conclusions. In the cheetah environment, PPO initially outperforms VPG, though near the end, both are brittle. Note that the performance we observe for PPO is not strictly monotonic. The clipped objective does constrain the size of updates, though there are no formal guarantees in the style of the TRPO guarantee. Work on PPO addresses this issue in a number of ways, including early stopping. It is also worthy to note that policy gradients are sensitive to batch size, advantage normalization, and policy architecture. /[cite /]
