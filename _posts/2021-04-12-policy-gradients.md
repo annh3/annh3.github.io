@@ -195,7 +195,7 @@ Note that setting $$k = T$$ pretty much gives us the original Monte Carlo estima
 
 As shown in the experiment above, VPG does not necessarily make monotonic improvements to the expected performance of a policy. TRPO constrains the step-size of the gradient updates to impose monotonic improvement. First we derive the theoretical basis for TRPO, then we look into the details and make approximations and estimates in order to implement it.
 
-Instead of setting the optimization objective to be the expected performance of a policy, we instead set the objective to be a loss function whose monotonic improvement guaranteed monotonic improve of the policy itself. Consider the following identity due to Kakade and Langford,
+Instead of setting the optimization objective to be the expected performance of a policy, we instead set the objective to be a loss function whose monotonic improvement guarantees monotonic improvement of the policy itself. Consider the following identity due to Kakade and Langford,
 
 $$\eta_{\pi}(\tilde{\pi}) = \eta_{\pi}(\pi) + \mathbb{E}_{\tau \sim \tilde{\pi}}[\sum_{t=0}^{\infty} \gamma^{t} A_{\pi}(s_{t}, a_{t})]$$
 
