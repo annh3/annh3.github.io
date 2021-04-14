@@ -3,9 +3,8 @@ layout: post
 title: Understanding and Implementing Policy Gradients
 published: true
 usemathjax: true
+tags: VPG, TRPO, PPO, variance of monte carlo estimation, monotonic improvement 
 ---
-
-> Topics touched on: VPG, TRPO, PPO, variance of monte carlo estimation, monotonic improvement 
 
 Policy gradients are a pretty cool class of reinforcement learning algorithms. They focus on directly optimizing the metric we care most about in reinforcement learning (the expected reward from acting in an environment), and because of this enjoy an elegant formulation that looks very similar to supervised maching learning, and has stability benefits over approaches like Q-learning, which indirectly learn a policy, and can suffer from too much [approximation](https://arxiv.org/abs/1812.02648).
 
