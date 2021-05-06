@@ -8,7 +8,7 @@ Hi! I'm Ann He. I am computer scientist, photographer, writer, runner, and philo
 
 ## Writing 
 
-From time to time, I try my hand at creative writing. A long time ago, I wrote a story called "Twins" which appeared in [this](https://issuu.com/achemagazine/docs/january2011) issue of Ache Magaine.
+From time to time, I try my hand at creative writing. A long time ago, I wrote a story called "Twins" which appeared in [this](https://issuu.com/achemagazine/docs/january2011) issue of Ache Magazine.
 
 Since *this* blog will be dedicated mostly to posts on computer science, my current (informal) writing can be found at my substack [dinner guests](https://annhe.substack.com/).
 
