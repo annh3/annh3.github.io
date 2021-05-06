@@ -249,7 +249,7 @@ Instead of optimizing $$M$$, which includes a penalty term for the KL divergence
 
 ### PPO
 
-Since TRPO uses =conjugate gradient descent to optimize the objective, we turn our focus on a simpler but similar algorithm, PPO. PPO is still motivated by the question of making monotonic improvements to a policy, but uses numerical methods which compute only first derivatives.
+Since TRPO uses conjugate gradient descent to optimize the objective, we turn our focus on a simpler but similar algorithm, PPO. PPO is still motivated by the question of making monotonic improvements to a policy, but uses numerical methods which compute only first derivatives.
 
 Here, we focus on PPO-Clip, which replaces the KL-divergence term by clipping the objective function to remove incentives to make big changes to the policy. 
 
