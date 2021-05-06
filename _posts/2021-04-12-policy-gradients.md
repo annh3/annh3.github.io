@@ -200,8 +200,6 @@ $$\eta_{\pi}(\tilde{\pi}) = \eta_{\pi}(\pi) + \mathbb{E}_{\tau \sim \tilde{\pi}}
 
 Where $$\eta_{\pi}(\pi)$$ is the discounted sum of rewards from following $$\pi$$ and $$A_{\pi}(s_{t}, a_{t})$$ is the advantage of taking action $$a_{t}$$ over following $$\pi$$ at time step $$t$$. If we massage this equation into a slightly different form, we can begin to see the theoretical basis for TRPO.
 
-Note that $$\mathbb{E}_{\tau \sim \tilde{\pi}} = \mathbb{E}_{s_0, a_0, s_1, a_1, ... \sim \tilde{\pi}}$$.
-
 If we define $$P(s_t = s \vert \tilde{\pi})$$ to be the probability that we end up in state $$s$$ at time $$t$$ by following $$\pi$$, then we can conveniently rewrite $$\eta_{\pi}(\tilde{\pi})$$ as 
 
 $$\begin{align*}
