@@ -1,6 +1,6 @@
 ---
 layout: post
-title: the problem of gender: part I
+title: the problem of gender (part I)
 published: true
 usemathjax: true
 tags: gender
