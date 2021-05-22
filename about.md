@@ -14,7 +14,7 @@ Since *this* blog will be dedicated mostly to posts on computer science, my curr
 
 ## Academic
 
-I graduated from Stanford University in 2017 with a bachelors in [symbolic systems](https://symsys.stanford.edu/about/span-dig-deep-solve-complex-problems) and a minor in mathematics, and in 2019 with a masters in computer science.
+I graduated from Stanford University in 2017 with a bachelors in [symbolic systems](https://symsys.stanford.edu/about/span-dig-deep-solve-complex-problems) and a minor in mathematics, and in 2019 with a masters in computer science, focusing in theoretical computer science and artificial intelligence.
 
 Publications:
 * [Learning Dependency Structures for Weak Supervision Models](https://arxiv.org/abs/1903.05844) with Paroma Varma, Fred Sala, Alex Ratner, and Chris Ré
@@ -25,4 +25,4 @@ Manuscripts:
 
 ## Photography
 
-Photography was a big, big part of my life in high school, and I accredit it helping me come to an understanding of myself as a creative person. Most of my work, which can be accessed [here](http://www.annhephoto.com), falls under the category of fashion photography, but I also experimented with documenting protests, and some portraits. In my photos, I am drawn to capturing energies, moods, personalities, and cinematic moments. Some of my favorite photographers are [Sally Mann](https://www.newyorker.com/culture/photo-booth/the-color-of-humanity-in-sally-manns-south), [Nan Goldin](https://www.dazeddigital.com/tag/nan-goldin), Ren Hang, Ryan McGinley (for his existential figures-against-landscapes and energetic portraits of celebrities), Nirrimi Hakanson, Dawoud Bey, and W. Eugene Smith (for his heartbreaking series on the health effects of pollution on the residents of Minamata). [Here's](https://www.dazeddigital.com/photography/article/13201/1/ann-he) an interview I did with Dazed & Confused Magazine.
+Photography was a big, big part of my life in high school, and I accredit it helping me come to an understanding of myself as a creative person. Most of my work can be accessed [here](http://www.annhephoto.com). In my photos, I am drawn to capturing energies, moods, personalities, essence, and cinematic moments. Some of my favorite photographers are [Sally Mann](https://www.newyorker.com/culture/photo-booth/the-color-of-humanity-in-sally-manns-south), [Nan Goldin](https://www.dazeddigital.com/tag/nan-goldin), Ren Hang, Ryan McGinley (for his existential figures-against-landscapes and energetic portraits of celebrities), Nirrimi Hakanson, Dawoud Bey, and W. Eugene Smith (for his heartbreaking series on the health effects of pollution on the residents of Minamata). [Here's](https://www.dazeddigital.com/photography/article/13201/1/ann-he) an interview I did with Dazed & Confused Magazine.
