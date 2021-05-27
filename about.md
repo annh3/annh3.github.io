@@ -17,8 +17,8 @@ Since *this* blog will be dedicated mostly to posts on computer science, my curr
 I graduated from Stanford University in 2017 with a bachelors in [symbolic systems](https://symsys.stanford.edu/about/span-dig-deep-solve-complex-problems) and a minor in mathematics, and in 2019 with a masters in computer science, focusing in theoretical computer science and artificial intelligence.
 
 Publications:
-* [Learning Dependency Structures for Weak Supervision Models](https://arxiv.org/abs/1903.05844) with Paroma Varma, Fred Sala, Alex Ratner, and Chris Ré
-* [Comparison of segmentation-free and segmentation-dependent computer-aided diagnosis of breast masses on a public mammography dataset](https://pubmed.ncbi.nlm.nih.gov/33309994/) with Rebecca S. Lee, Jared A. Dunnmon, Siyi Tang, Chris Ré, and Daniel Rubin
+* [Learning Dependency Structures for Weak Supervision Models](https://arxiv.org/abs/1903.05844) with Paroma Varma, Fred Sala, Alex Ratner, and Chris Ré in ICML 2019
+* [Comparison of segmentation-free and segmentation-dependent computer-aided diagnosis of breast masses on a public mammography dataset](https://pubmed.ncbi.nlm.nih.gov/33309994/) with Rebecca S. Lee, Jared A. Dunnmon, Siyi Tang, Chris Ré, and Daniel Rubin in Journal of Biomedical Informatics 2021
 
 Manuscripts:
 * [Note on the Necessity of Correlation in PCP Queries](https://annhe.xyz/files/pcp_query_structure.pdf)
