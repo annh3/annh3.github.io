@@ -265,7 +265,7 @@ $$g(\epsilon,A^{\pi_{\theta_{k}}}(s,a)) = clip \big(\dfrac{\pi_{\theta}(a|s)}{\p
 
 We can view the clipping term as analogous to KL-constraining the old and new policies in TRPO. Taking the of min the clipped objective and unclipped objective corresponds to taking a pessimistic (i.e. lower) bound on the original object. In our implementation of PPO-clip, we set $$\epsilon=0.2$$, which was shown in the PPO [paper](https://arxiv.org/abs/1707.06347) to lead to the best average performance.
 
-Taking ratio of the old and the new log probabilities, in addition to being a way to measure the magnitude of policy change accross the update, serves another purpose. Notice that in the objective we are estimating the value for the policy with parameters $$\theta_{k+1}$$ but our state-action samples are collected from the policy with parameter $$\theta_{k}$$. Using $$\dfrac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)$$ allows us to re-weight our samples so we approximate the expectation of the loss with respect to $$\theta_{k+1}$$. This common technique in RL is called importance sampling.
+Taking ratio of the old and the new log probabilities, in addition to being a way to measure the magnitude of policy change accross the update, serves another purpose. Notice that in the objective we are estimating the value for the policy with parameters $$\theta_{k+1}$$ but our state-action samples are collected from the policy with parameter $$\theta_{k}$$. Using $$\dfrac{\pi_{\theta}(a|s)}{\pi_{\theta_{k}}(a|s)}$$ allows us to re-weight our samples so we approximate the expectation of the loss with respect to $$\theta_{k+1}$$. This common technique in RL is called importance sampling.
 
 Here's a snippet of the PPO update--
 ```
