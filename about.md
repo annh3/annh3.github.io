@@ -23,6 +23,10 @@ Publications:
 Manuscripts:
 * [Note on the Necessity of Correlation in PCP Queries](https://annhe.xyz/files/pcp_query_structure.pdf)
 
+Class Projects:
+* [Quantum Complexity and Its Implications in Cryptography](https://annhe.xyz/files/CS_254_Prog_Report.pdf) ([graduate complexity theory](http://theory.stanford.edu/~liyang/teaching/complexity21.html) at Stanford University)
+* [Classification of Groups of Order 12](https://annhe.xyz/files/Math_120_WIM.pdf) ([honors abstract algebra](http://math.stanford.edu/~vakil/10-120/) at Stanford University)
+
 ## Photography
 
 Photography was a big, big part of my life in high school, and I accredit it helping me come to an understanding of myself as a creative person. Most of my work can be accessed [here](http://www.annhephoto.com). In my photos, I am drawn to capturing energies, moods, personalities, essence, and cinematic moments. Some of my favorite photographers are [Sally Mann](https://www.newyorker.com/culture/photo-booth/the-color-of-humanity-in-sally-manns-south), [Nan Goldin](https://www.dazeddigital.com/tag/nan-goldin), Ren Hang, Ryan McGinley (for his existential figures-against-landscapes and energetic portraits of celebrities), Nirrimi Hakanson, Dawoud Bey, and W. Eugene Smith (for his heartbreaking series on the health effects of pollution on the residents of Minamata). [Here's](https://www.dazeddigital.com/photography/article/13201/1/ann-he) an interview I did with Dazed & Confused Magazine.
