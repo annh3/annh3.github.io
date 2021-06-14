@@ -24,7 +24,7 @@ Manuscripts:
 * [Note on the Necessity of Correlation in PCP Queries](https://annhe.xyz/files/pcp_query_structure.pdf)
 
 Class Projects:
-* [Quantum Complexity and Its Implications in Cryptography](https://annhe.xyz/files/CS_254_Prog_Report.pdf) ([graduate complexity theory](http://theory.stanford.edu/~liyang/teaching/complexity21.html) at Stanford University)
+* [Quantum Complexity and Its Implications in Cryptography](https://annhe.xyz/files/CS_254_Prog_Rep.pdf) ([graduate complexity theory](http://theory.stanford.edu/~liyang/teaching/complexity21.html) at Stanford University)
 * [Classification of Groups of Order 12](https://annhe.xyz/files/Math_120_WIM.pdf) ([honors abstract algebra](http://math.stanford.edu/~vakil/10-120/) at Stanford University)
 
 ## Photography
