@@ -4,7 +4,7 @@ title: About
 ---
 
 
-Hi! I'm Ann He. I am computer scientist, photographer, writer, runner, and philosophy lover. Born in the hot, humid city of Chengdu, Sichuan, and raised in the even more hot and humid city Houston, Texas, I now call Northern California my home. Feminism and egalitarianism (in certain, practical forms) are two broad world-views I align with. Furthermore, I'm convinced that one can always find [practical means to enact idealistic visions](https://annhe.substack.com/p/practical-idealism), and I hope to advance gender equality as well as science & technology in my life.
+Hi! I'm Ann He. I am computer scientist, photographer, writer, runner, and philosophy lover. Born in the hot, humid city of Chengdu, Sichuan, and raised in the even more hot and humid city Houston, Texas, I now call Northern California my home. I'm always thinking about how we can make our world better than we inherited it. I'm convinced that one can always find [practical means to enact idealistic visions](https://annhe.substack.com/p/practical-idealism), and I hope to advance gender equality as well as science & technology in my life.
 
 ## Writing 
 
