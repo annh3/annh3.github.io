@@ -1,11 +1,19 @@
 ---
 layout: post
-title: Inference in Large Language Models
+title: On Decoding, or, Inference in Large Language Models
 published: false
 usemathjax: true
 tags: inference, large language models
 ---
 
-Excerpt here
+"On Decoding", or, how to learn the model $$ \log p(y | x ) = \sum_{j=0}^{m-1} \log p(y_{j+1} | y_{\le_{j}}, x)$$ and estimate $$y^{*} = argmax_{y} p(y|x)$$, using a transformer architecture.
 
 <!--excerpt-->
+
+## Greedy Decoding
+
+## Beam Decoding 
+
+## Speculative Decoding
+
+## MCTS Decoding
