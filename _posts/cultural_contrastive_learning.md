@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cultural Contrastive Learning
-published: false
+published: true
 usemathjax: true
 tags: numinous
 ---
