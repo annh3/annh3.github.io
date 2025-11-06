@@ -67,7 +67,7 @@ Mind the Gap paper evaluates models for their geometric gap on the
 COCO dataset, [Lin et al . 2014] which contains photos of generic ob-
 jects (in the same sense that [Ramesh et al. 2021] pre-trained DALL-
 E1 on image, text pairs for which the text appeared in Wikipedia
-> 100 times), Voyage, [Voyage AI 2024], evaluates mixed modality
+$$> 100$$ times), Voyage, [Voyage AI 2024], evaluates mixed modality
 search on the distribution (text, image of text), i.e. that the string
 "Hello world" retrieves an image of "Hello world" rather than string
 such as "Cat."
