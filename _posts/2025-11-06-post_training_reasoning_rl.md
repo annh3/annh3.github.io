@@ -11,7 +11,10 @@ tags: numinous
 
 
 
-| Left-aligned | Center-aligned | Right-aligned |
+| Function | Equation | Notes |
 |:---|:---:|---:|
-| Data A | Data B | Data C |
-| More A | More B | More C |
+| PPO | comment | comment |
+| GSPO | comment | comment |
+| GRPO | comment | comment |
+| CISPO | comment | comment |
+| DAPO | comment | comment |
