@@ -6,8 +6,6 @@ usemathjax: true
 tags: rl, llms, foundation models, rollouts, sft
 ---
 
-I am indeed, becoming an interpretability girlie, against my better judgement. 
-
 What sparked my curiousity? The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585) paper which sent me reeling on a chat with my friend. Then I read another paper, the [Qwen3](https://arxiv.org/abs/2505.09388), where they talked about thinking and non thinking mode fusion, and I was like, is that really that difficult? It seems you can mix and match any sequence of domain-specific foundation model rollouts that by appending transition tokens which functionally are similar to conditional logic *and, or, where, etc ...*, fine-tune on those rollouts, rinse and repeat. 
 
 The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'However, Recheck, Wait, Aha'* were apparently very important tokens for the reasoning paths for [stabilizing entropy](https://arxiv.org/abs/2505.22617) of the learned policy. I'll assume, also, that avoiding entropy collapse is a good prior for the correctness of reasoning paths. To preserve these tokens, which, due to their low $$\pi_{ref}$$ weight in the denominator of the $$IS$$, which creates a high $$\dfrac{\pi_{cur}}{\pi_{ref}}$$ for the advantage ($$\sum_{i=1}^t r_i - V$$), were clipped out of the PPO (and GSPO and GRPO) updates, the CIPSO objective from the m1 paper simply adds a stop gradient operation, so the high IS = $$\dfrac{\pi_{cur}}{\pi_{ref}}$$ term does not explode the gradient update in the chain rule of backpropagation, and tokens (*'However, Recheck, Wait, Aha'*) are assigned credit in the update.
