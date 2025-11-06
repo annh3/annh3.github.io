@@ -19,11 +19,11 @@ The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'Ho
 
 | Function | Equation | Notes |
 |:---|:---:|---:|
-| PPO | $$J(\theta) = $$ | comment |
+| PPO | $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$ | comment |
 | GSPO | comment | comment |
 | GRPO | comment | comment |
 | DAPO | comment | comment |
-| CISPO | comment | comment |
+| CISPO |$$J(\theta) = $$  | comment |
 
 
 *Thank you to Sharon Zhou for amplifying my inspiration with random words like rollouts and transformers, Risto Vuorio for sending me a bunch of papers, and Dean from R for being a middle man of the information transfer with RV.*
