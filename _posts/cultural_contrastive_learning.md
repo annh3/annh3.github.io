@@ -10,7 +10,7 @@ tags: numinous
 I did to express a proof of concept methodology for finetuning multimodal
 embeddings to imitate a human's engram when one has access to social media
 platforms, building on ideas from contrastive learning, multimodal foundation
-models, philosophy, and media theory. The full text can be found [here](docs/numinous_contrastive.pdf)*
+models, philosophy, and media theory. The full text can be found [here](files/numinous_contrastive.pdf)*
 
 Modality gap in representation learning is a well-studied problem. While
 many have definitions of it in measurable benchmarks, most conceptualiza-
