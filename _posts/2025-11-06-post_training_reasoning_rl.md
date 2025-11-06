@@ -20,7 +20,13 @@ The main insight from GSPO and GRPO, the "group part", is that one may approxima
 
 I shouted to S.Z., why was the entire section about the long reflection tokens in the m1 paper necessary??? I wonder if one studied the long reflection tokens from the m1 papers in Euclidean Space post post-training they would belong in the same subspace. Why am I always becoming an interpretability girlie, against my better judgment?! She said, I wonder about the false positives for the reflection tokens? I said, I can imagine some trigger words. Who would have thought that one could simply inspect conditional probabilities?
 
-The KL term, these days, is left out of most reasoning model objective functions as [policies deviate wildly from the reference policy](https://arxiv.org/pdf/2506.10910) anyway. I shouted to A.L., the rollout completion length penalty in section 2.2.3 of the [magician](https://arxiv.org/pdf/2506.10910) paper makes no sense! Why not just append a STOP_THINKING token after correct reasoning traces and move this upstream to the Long CoT cold start behavior imitation stage of the post raining post training reasoning rl pipeline? I finally figured out how to do las vegas algorithms with foundation models, I had been thinking forever. Computability theory, my OG.
+The KL term, these days, is left out of most reasoning model objective functions as [policies deviate wildly from the reference policy](https://arxiv.org/pdf/2506.10910) anyway. I shouted to A.L., the rollout completion length penalty in section 2.2.3 of the [magistral](https://arxiv.org/pdf/2506.10910) paper makes no sense! Why not just append a STOP_THINKING token after correct reasoning traces and move this upstream to the Long CoT cold start behavior imitation stage of the post raining post training reasoning rl pipeline? I finally figured out how to do las vegas algorithms with foundation models, I had been thinking forever. Computability theory, my OG.
+
+Anyway the point of this above sections was to point out the similarity between the fork in the road reflection tokens in the reasoning rollouts and the thinking fusion mode from qwen3, at different layers of abstraction.
+
+#### KL Distillation
+
+We took out the KL term in the RL phase of the pipeline (recall that the m1 and the magistral and probably a few other papers do not have a KL term in the RL objective) so now we can put the KL back in during the distillation phase!
 
 
 *Thank you to Sharon Zhou for amplifying my inspiration with random words like rollouts and transformers, RV for sending me a bunch of papers, and D from R for being a middle man of the information transfer with RV.*
