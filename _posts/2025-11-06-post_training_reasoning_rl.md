@@ -14,7 +14,7 @@ The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'Ho
 
 
 #### Objective Function Table
-
+$$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$
 
 
 | Function | Equation | Notes |
