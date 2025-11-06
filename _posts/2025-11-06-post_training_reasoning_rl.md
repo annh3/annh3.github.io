@@ -18,5 +18,9 @@ $$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum
 
 The main insight from GSPO and GRPO, the "group part", is that one may approximate the baseline term (V) in an advantage computation $$A = R - V$$ with the average summed return of the group rollouts, the many completions for a fixed prompt, the (Prover, Verifier pairs). 
 
+I shouted to S.Z., why was the entire section about the long reflection tokens in the m1 paper necessary??? I wonder if one studied the long reflection tokens from the m1 papers in Euclidean Space post post-training they would belong in the same subspace. Why am I always becoming an interpretability girlie, against my better judgment?! She said, I wonder about the false positives for the reflection tokens? I said, I can imagine some trigger words. Who would have thought that one could simply inspect conditional probabilities?
+
+The KL term, these days, is left out of most reasoning model objective functions as [policies deviate wildly from the reference policy](https://arxiv.org/pdf/2506.10910) anyway. I shouted to A.L., the rollout completion length penalty in section 2.2.3 of the [magician](https://arxiv.org/pdf/2506.10910) paper makes no sense! Why not just append a $$<STOP_THINKING>$$ token after correct reasoning traces and move this upstream to the Long CoT cold start behavior imitation stage of the post raining post training reasoning rl pipeline? I finally figured out how to do las vegas algorithms with a foundation models, I had been thinking forever.
+
 
 *Thank you to Sharon Zhou for amplifying my inspiration with random words like rollouts and transformers, Risto Vuorio for sending me a bunch of papers, and Dean from R for being a middle man of the information transfer with RV.*
