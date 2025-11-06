@@ -90,6 +90,99 @@ cetera. When we learn a custom user adapter downstream of a pre-
 trained baseline multimodal embeddings model, we are in, some
 sense, learning this transformation.
 
+### Dataset
+
+The dataset we explore with is a second-degree scrape of a test
+user’s text-based and image-based semantic space. This is chosen as
+a joint distribution which is representative of the test user’s qualia
+(perhaps, in a cultural subspace).
+
+We choose to join Substack and Pinterest space as they represent
+intentional content discovery platforms in which users explore an
+inner space such as aesthetics for home design, visualizing futures,
+or introspective writing with emotional qualities. In particular, these are two domains in which we expect a high frequency of cross-
+artefact association driven by the user’s intuitive style, or rhizomatic
+[Wikipedia contributors 2025] thinking.
+
+In particular, this user-qualia-representative dataset is one in
+which various forms of a modality gap appear with embedding
+spaces such as voyage-multimodal-3.
+
+### Initial Evaluations on Raw Text and Image Features
+
+The first evaluation above shows a 0.79 recall rate on Pinterest
+image and associated ground truth captions, which shows a good
+image-to-image-caption generalization ability of voyage-multimodal-
+3. The second evaluation above shows a clear modality gap on
+Substack posts, which are out of distribution of the (image, image-
+caption) distribution. In the raw feature space, text queries retrieve
+images of text regardless of the semantic content, rather than any
+other type of image artifact, thus failing the text to pdf of text
+evaluation in [Voyage AI 2024].
+
+### Methodology
+#### Soft Labeling
+
+Given the initial analysis of embedding raw text features, we choose
+to work, in this paper, with AI annotations of raw text and image
+features, so that the cultural knowledge of foundation models serves
+as a form of supervision signal. In future work, a finetuned model
+based on an individual could provide more attuned personalization.
+
+We provide, in the Appendix A.1, the prompts used.
+The annotation allows us to project the raw image and text fea-
+tures to roughly the same space, when embedded with voyage-multimodal-3
+or nomic-text-v1, meaning the new feature space has good seman-
+tic overlap.
+
+From this annotation semantic space, we run UMAP [McInnes
+et al . 2018] on the text and image domains individually, then HDB-
+SCAN [Malzer and Baum 2019] to produce clusters. We then com-
+pute cluster assignments across domains via centroid similarity and
+filter to a 1-1 mapping via the Hungarian Algorithm [CP-Algorithms
+2023]. Figure 3. Shows a visualization of the clustered space.
+
+In Appendix A.2 we provide samples of semantic cross-modal
+clusters produced by this method.
+
+#### Finetuning
+
+LoRA [Hu et al . 2021] introduced the idea of sparse fine-tuning
+the through the addition of low-rank matrices. Inspired, we learn
+a linear and a two-layer adapter, which is applied to the output
+of voyage-multimodal-3 to associate user qualia across text and
+image space.
+
+The soft cluster labels provide positive-negative labels for fine-
+tuning. The initial loss function we use is the InfoNCE loss [van den
+Oord et al. 2018], written here for concreteness.
+
+$$ InfoNCE(q,X) = - \log (\sum_{pos} exp(\dfrac{sim(X_q,X_{pos}}{\tau})) + \log (\sum_{neg} exp(\dfrac{sim(X_q,X_{neg}}{\tau})) $$
+
+Where 𝑞 is an anchor point. For a given batch, we cycle through all
+points so each point is the anchor once in the computation of a per-
+batch loss. In the notation 𝑋𝑖 represents a row-vector of the dataset.
+The loss function penalizes high similarity between the anchor and
+negative points while rewarding high similarity between the anchor
+and positive points.
+
+#### Results
+
+We measure few of initial metrics: cross-modal retrieval and cluster
+coherence (the ratio of retrieved artefacts which are of the same clus-
+ter), uniformity [Wang and Isola 2020], and create a query-histogram
+visualization for the effect of temperature on the fine-tuned distribu-
+tion. The metrics are computed held-out clusters after the Hungarian
+Algorithm is applied to filter the cluster matching. We chose to hold
+out novel clusters rather than just data points as it is a more difficult
+generalization measurement. We note that the coherence jump from
+1-layer to 2-layer is significant, as the Universal Approximation The-
+orem [Hornik et al . 1989] would suggest, and demonstrate on these
+two architectures as a proof of concept. The uniformity score is
+measured as it is associated with downstream retrieval performance
+and the author’s choice to measure it was due to initial observations
+on the uniformity of the query histograms.
+
 ## References
 <a id="1">[1]</a> 
 CP-Algorithms. 2023. Hungarian Algorithm. Retrieved September 4, 2025, from https://cp-algorithms.com/graph/hungarian-algorithm.html.
