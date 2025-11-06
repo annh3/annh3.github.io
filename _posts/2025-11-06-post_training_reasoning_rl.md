@@ -12,18 +12,13 @@ What sparked my curiousity? The long reflection tokens from the m1 paper which s
 
 The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'However, Recheck, Wait, Aha'* were apparently very important tokens for the reasoning paths for [stabilizing entropy](https://arxiv.org/abs/2505.22617) of the learned policy. I'll assume, also, that avoiding entropy collapse is a good prior for the correctness of reasoning paths. To preserve these tokens, which, due to their low $$\pi_{ref}$$ weight in the denominator of the $$IS$$, which creates a high $$\dfrac{\pi_{cur}}{\pi_{ref}}$$ for the advantage ($$\sum_{i=1}^t r_i - V$$), were clipped out of the PPO (and GSPO and GRPO) updates, the CIPSO objective from the m1 paper simply adds a stop gradient operation, so the high IS = $$\dfrac{\pi_{cur}}{\pi_{ref}}$$ term does not explode the gradient update in the chain rule of backpropagation, and tokens (*'However, Recheck, Wait, Aha'*) are assigned credit in the update.
 
+#### PPO Objective Function
+$$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$
 
-#### Objective Function Table
+#### GRPO Objective Function
 $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$
 
 
-| Function | Equation | Notes |
-|:---|:---:|---:|
-| PPO | $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$ | comment |
-| GSPO | comment | comment |
-| GRPO | comment | comment |
-| DAPO | comment | comment |
-| CISPO |$$J(\theta) = $$  | comment |
 
 
 *Thank you to Sharon Zhou for amplifying my inspiration with random words like rollouts and transformers, Risto Vuorio for sending me a bunch of papers, and Dean from R for being a middle man of the information transfer with RV.*
