@@ -28,8 +28,7 @@ ceive it. Qualia is conditional on an individual’s neural achitecture,
 so to speak, and the experiences they collect through their life, the
 particular environments they are embedded in (in the sense of other
 agents being part of an environment, in the sense of the Sapir Whorf
-Hypothesis [Whorf 1956], in the sense of Wittgenstein [Wittgen-
-stein 1953]), and so on. (The Sapir-Whorf hypothesis suggests that
+Hypothesis, in the sense of Wittgenstein , and so on. (The Sapir-Whorf hypothesis suggests that
 language influences thought. This connects to Wittgenstein’s con-
 cept of language games, where meaning emerges from use within
 specific contexts.)
@@ -42,7 +41,7 @@ informal words for this might be resonance, evocation, zeitgeist
 convergence (shared cultural moment expression).
 
 The concept of a modality gap was first introduced in Mind the Gap
-(Liang et al, 2022) [Liang et al . 2022] which posits that geometric
+(Liang et al, 2022) which posits that geometric
 inductive bias introduced in multimodal embeddings in which uni-
 modal domains are tokenized and embedded separately creates a
 modality gap on image and image caption distributions.
@@ -51,14 +50,13 @@ A searchable continuous latent space which solves the modality
 gap lends itself to a multimodal embedding as well as a latent space
 for user-conditional multimodal generation. We believe that this is
 an approximation to understanding the phenomenal binding prob-
-lem [Pearce 2012], which is about how objects, background objects,
+lem, which is about how objects, background objects,
 as well as abstract and affective features are integrated into a unified
 experience for an individual.
 
 A motivating application of customizing a CLIP-like latent space
-is its use in custom text-conditional diffusion pipelines [Ramesh et al .
-2022]. A custom latent space approach could be complementary to
-fine-tuning diffusion weights [Ruiz et al. 2022], which focuses more
+is its use in custom text-conditional diffusion pipelines. A custom latent space approach could be complementary to
+fine-tuning diffusion weights, which focuses more
 on direct style-transfer like results rather than semantic understand-
 ing.
 
@@ -66,10 +64,10 @@ Thus far, the representational learning research community has
 focused on multimodal distributions of (text, image) pairs which
 are relatively straightforward in their translation. For example, The
 Mind the Gap paper evaluates models for their geometric gap on the
-COCO dataset, [Lin et al . 2014] which contains photos of generic ob-
-jects (in the same sense that [Ramesh et al. 2021] pre-trained DALL-
+COCO dataset, which contains photos of generic ob-
+jects (in the same sense that pre-trained DALL-
 E1 on image, text pairs for which the text appeared in Wikipedia
-$$> 100$$ times), Voyage, [Voyage AI 2024], evaluates mixed modality
+$$> 100$$ times), Voyage, evaluates mixed modality
 search on the distribution (text, image of text), i.e. that the string
 "Hello world" retrieves an image of "Hello world" rather than string
 such as "Cat."
@@ -86,7 +84,7 @@ sensory space.
 
 An individual’s sensory space, on the other hand, is shaped by
 their histories, experiences, unique biology. Digitally, it is traceable,
-for example, through a user’s hypertextual [Liu and Almeda 2025]
+for example, through a user’s hypertextual
 space, intentional navigation through the web, manual linking, et
 cetera. When we learn a custom user adapter downstream of a pre-
 trained baseline multimodal embeddings model, we are in, some
@@ -101,8 +99,7 @@ We choose to join Substack and Pinterest space as they represent
 intentional content discovery platforms in which users explore an
 inner space such as aesthetics for home design, visualizing futures,
 or introspective writing with emotional qualities. In particular, these are two domains in which we expect a high frequency of cross-
-artefact association driven by the user’s intuitive style, or rhizomatic
-[Wikipedia contributors 2025] thinking.
+artefact association driven by the user’s intuitive style, or rhizomatic thinking.
 
 In particular, this user-qualia-representative dataset is one in
 which various forms of a modality gap appear with embedding
