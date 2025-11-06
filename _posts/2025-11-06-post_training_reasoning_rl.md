@@ -16,7 +16,7 @@ The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'Ho
 $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$
 
 #### CISPO Objective function
-$$J(\theta) = \mathbb{E}[\frac{1}{sum_{i=1}^G|o_i|}] \sum_{i=1}^G \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} | q, o_{i,<t}))$$
+$$J(\theta) = \mathbb{E}[\frac{1}{sum_{i=1}^G |o_i| } \sum_{i=1}^G \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} | q, o_{i,<t}))]$$
 
 
 
