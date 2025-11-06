@@ -18,7 +18,7 @@ $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t},
 #### CISPO Objective function
 $$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} \mid q, o_{i,\text{prev}})\right]$$
 
-
+The main insights from GSPO and GRPO, the "group part"
 
 
 *Thank you to Sharon Zhou for amplifying my inspiration with random words like rollouts and transformers, Risto Vuorio for sending me a bunch of papers, and Dean from R for being a middle man of the information transfer with RV.*
