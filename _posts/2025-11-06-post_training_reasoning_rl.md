@@ -6,6 +6,13 @@ usemathjax: true
 tags: numinous
 ---
 
+I am indeed, becoming an interpretability girlie, against my better judgement. 
+
+What sparked my curiousity? The long reflection tokens f
+
+
+
+
 
 #### Objective Function Table
 
