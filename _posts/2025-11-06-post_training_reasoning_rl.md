@@ -49,7 +49,7 @@ This is what [magistral](https://arxiv.org/pdf/2506.10910) does, they say they t
 
 $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon_{low}, 1+\epsilon_{high})A_{i,t}) $$
 
-$\epsilon_{high}$ allows for $pi_{cur}$ to deviate from $pi_{ref}$, which adjusting the $\beta$ term on a KL penalty could do.
+$\epsilon_{high}$ allows for $\pi_{cur}$ to deviate from $\pi_{ref}$, which adjusting the $\beta$ term on a KL penalty could do.
 
    
 5. Converting the clip into a stop_gradient and masking in the CISPO objective
