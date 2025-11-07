@@ -35,7 +35,7 @@ Anyway the point of this above sections was to point out the similarity between 
 
 #### Entropy in the RL Reasoning Phase
 
-Papers such as [this one](https://arxiv.org/abs/2505.22617) talk about the importance of the entropy of the optimized policy for downstream performance, fitting the equation $R = -a * e^{H} + b$ (H is always between 0 and 1 so $$e^{H}$$ is an convex curve inverted by the $-a$. The downstream evaluations are datasets such as OMNI-BENCH, AIME 2024, et cetera. (Recall that foundation models have a `log_proba` or `proba` function which allows you to compute $H = - p \sum \log p$). 
+Papers such as [this one](https://arxiv.org/abs/2505.22617) talk about the importance of the entropy of the optimized policy for downstream performance, fitting the equation $$R = -a * e^{H} + b$$ (H is always between 0 and 1 so $$e^{H}$$ is an convex curve inverted by the $$-a$$. The downstream evaluations are datasets such as OMNI-BENCH, AIME 2024, et cetera. (Recall that foundation models have a `log_proba` or `proba` function which allows you to compute $$H = - p \sum \log p$$). 
 
 There are several ways to optimize for entropy of a reasoning RL policy
 
