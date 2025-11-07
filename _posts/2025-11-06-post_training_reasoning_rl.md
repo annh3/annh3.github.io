@@ -1,7 +1,7 @@
 ---
 layout: post
 title: stochastic parrots of post raining 🌧️ ☔️ post training reinforcement learning reasoning 
-published: false
+published: true
 usemathjax: true
 tags: rl, llms, foundation models, rollouts, sft
 ---
@@ -64,7 +64,7 @@ I wonder, how much entropy is too much entropy? I wish the [entropy mechanism pa
 They took out the KL term in the RL phase of the pipeline (recall that the m1 and the magistral and probably a few other papers do not have a KL term in the RL objective)! But KL distillation, ah the good teacher and the professor forcing (so to speak, those are the titles of the papers!) can be used to train lightweight smaller models from rollouts from the heavyweight models (trained through the (pretraining -> Long CoT cold start -> reasoning RL -> thinking mode fusion -> general RL) pipeline). It seems inefficient that one must have `log_proba` access to the heavyweight model logits to compute this update, i.e. to do [logit distillation](https://thinkingmachines.ai/blog/on-policy-distillation/).
 
 
-*Thank you to SZ for amplifying my inspiration with random words like rollouts and transformers. Next, closed weight frontier model techniques.*
+*Thank you to SZ for amplifying my inspiration with random words like rollouts and transformers, for the blog in which I learned the term logit distillation and for RV for the open weight papers.*
 
 
 
