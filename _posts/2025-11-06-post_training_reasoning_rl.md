@@ -19,7 +19,7 @@ $$J(\theta) = \mathbb{E}[\sum{i=1}^{G} \frac{1}{|o_i|} \sum_{t=1}^{|o_i|} min(r_
 
 
 #### CISPO Objective function
-$$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} \mid q, o_{i,\text{prev}})\right M_{i,t}]$$
+$$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} \mid q, o_{i,\text{prev}}) M_{i,t} \right]$$
 
 where $M_{i,t} = 0$ if $A_{i,t} > 0$ and $r > 1 + \epsilon_{high}$, $M_{i,t} = 0$ if $A_{i,t} < 0$ and $r < 1 + \epsilon_{low}$ and $1$ otherwise. 
 
