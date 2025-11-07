@@ -11,7 +11,7 @@ What sparked my curiousity? The long reflection tokens from the [m1](https://arx
 The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'However, Recheck, Wait, Aha'* were apparently very important tokens for the reasoning paths for [stabilizing entropy](https://arxiv.org/abs/2505.22617) of the learned policy. I'll assume, also, that avoiding entropy collapse is a good prior for the correctness of reasoning paths. To preserve these tokens, which, due to their low $$\pi_{ref}$$ weight in the denominator of the $$IS$$, which creates a high $$\dfrac{\pi_{cur}}{\pi_{ref}}$$ for the advantage ($$\sum_{i=1}^t r_i - V$$), were clipped out of the PPO (and GSPO and GRPO) updates, the CIPSO objective from the m1 paper simply adds a stop gradient operation, so the high IS = $$\dfrac{\pi_{cur}}{\pi_{ref}}$$ term does not explode the gradient update in the chain rule of backpropagation (I believe the stop_gradient autograd function is implemented in from torch.nn.functional.autograd import F as g(x) = constant, i.e. treat the stop_gradient(g(x)) as g(x) = constant), and tokens (*'However, Recheck, Wait, Aha'*) are assigned credit in the update.
 
 #### PPO Objective Function Minus the KL Term
-$$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$
+$$J(\theta) = \mathbb{E}[\frac{1}{|o_i|} \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) ]$$
 
 #### GRPO Objective function
 
@@ -19,7 +19,9 @@ $$J(\theta) = \mathbb{E}[\sum{i=1}^{G} \frac{1}{|o_i|} \sum_{t=1}^{|o_i|} min(r_
 
 
 #### CISPO Objective function
-$$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} \mid q, o_{i,\text{prev}})\right]$$
+$$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} \mid q, o_{i,\text{prev}})\right M_{i,t}]$$
+
+where $M_{i,t} = 0$ if $A_{i,t} > 0$ and $r > 1 + \epsilon_{high}$, $M_{i,t} = 0$ if $A_{i,t} < 0$ and $r < 1 + \epsilon_{low}$ and $1$ otherwise. 
 
 The main insight from GSPO and GRPO, the "group part", is that one may approximate the baseline term (V) in an advantage computation $$A = R - V$$ with the average summed return of the group rollouts, the many completions for a fixed prompt, the (Prover, Verifier pairs). 
 
@@ -41,9 +43,19 @@ I heard this
   
 3. $\epsilon_{high}$ in the clip function of a GRPO objective
 
-This is what [magistral](https://arxiv.org/pdf/2506.10910) does, they say they that entropy bonus of method 1 causes instability. 
+This is what [magistral](https://arxiv.org/pdf/2506.10910) does, they say they that entropy bonus of method 1 causes instability. The basic modification to the GRPO function is to adjust the clipping threshold.
+
+$$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon_{low}, 1+\epsilon_{high})A_{i,t}) $$
+
+$\epsilon_{high}$ allows for $pi_{cur}$ to deviate from $pi_{ref}$, which adjusting the $\beta$ term on a KL penalty could do.
+
    
-5. Converting the clip into a stop_gradient in the CISPO objective
+5. Converting the clip into a stop_gradient and masking in the CISPO objective
+
+The stop_gradient is implement by returning None in the backward pass of an autodifferentiation graph, treating the variable like a constant. The difference with clipping is that the high IS term $r_{i,t}$ is part of the loss computation and weights the fork in the road tokens which contribute to high entropy (exploration) in the loss function accordingly. 
+
+```
+```
 
 I wonder, how much entropy is too much entropy? I wish the [entropy mechanism paper]((https://arxiv.org/abs/2505.22617)) had just reported on an exact value of $H$, if it exists, for the downstream tasks. I suppose the predictive equation is more flexibile as tasks become ever more computationally difficult.
 
