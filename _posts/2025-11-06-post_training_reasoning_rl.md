@@ -15,7 +15,7 @@ $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t},
 
 #### GRPO Objective function
 
-$$J(\theta) = \mathbb{E}[\sum{i=1}{G} \frac{1}{|o_i|} \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) ] $$
+$$J(\theta) = \mathbb{E}[\sum{i=1}^{G} \frac{1}{|o_i|} \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) ] $$
 
 
 #### CISPO Objective function
