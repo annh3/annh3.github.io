@@ -59,7 +59,7 @@ I wonder, how much entropy is too much entropy? I wish the [entropy mechanism pa
 
 #### KL Distillation
 
-We took out the KL term in the RL phase of the pipeline (recall that the m1 and the magistral and probably a few other papers do not have a KL term in the RL objective)! But KL distillation, ah the good teacher and the professor forcing (so to speak, those are the titles of the papers!) can be used to train lightweight smaller models from rollouts from the heavyweight models (trained through the (pretraining -> Long CoT cold start -> reasoning RL -> thinking mode fusion -> general RL) pipeline). It seems inefficient that one must have access to the heavyweight model logits to compute this update, though probably better generalization than if one only had the rollouts.
+They took out the KL term in the RL phase of the pipeline (recall that the m1 and the magistral and probably a few other papers do not have a KL term in the RL objective)! But KL distillation, ah the good teacher and the professor forcing (so to speak, those are the titles of the papers!) can be used to train lightweight smaller models from rollouts from the heavyweight models (trained through the (pretraining -> Long CoT cold start -> reasoning RL -> thinking mode fusion -> general RL) pipeline). It seems inefficient that one must have `log_proba` access to the heavyweight model logits to compute this update, though probably better generalization than if one only had the rollouts.
 
 
 *Thank you to SZ for amplifying my inspiration with random words like rollouts and transformers, RV for sending me a bunch of papers, and D from R for being a middle man of the information transfer with RV.*
