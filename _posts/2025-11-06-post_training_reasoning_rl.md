@@ -1,6 +1,6 @@
 ---
 layout: post
-title: stochastic parrots of post raining 🌧️ ☔️ post training reinforcement learning reasoning
+title: stochastic parrots of post raining 🌧️ ☔️ post training reinforcement learning reasoning (open weight models version)
 published: false
 usemathjax: true
 tags: rl, llms, foundation models, rollouts, sft
@@ -31,7 +31,7 @@ I shouted to S.Z., why was the entire section about the long reflection tokens i
 
 The KL term, these days, is left out of most reasoning model objective functions as [policies deviate wildly from the reference policy](https://arxiv.org/pdf/2506.10910) anyway. I shouted to A.L., the rollout completion length penalty in section 2.2.3 of the [magistral](https://arxiv.org/pdf/2506.10910) paper makes no sense! Why not just append a STOP_THINKING token after correct reasoning traces and move this upstream to the Long CoT cold start behavior imitation stage of the post raining post training reasoning rl pipeline? I finally figured out how to do las vegas algorithms with foundation models, I had been thinking forever. Computability theory, my OG.
 
-Anyway the point of this above sections was to point out the similarity between the fork in the road reflection tokens in the reasoning rollouts and the thinking fusion mode from qwen3, at different layers of abstraction.
+Anyway the point of this above sections was to point out the similarity between the fork in the road reflection tokens in the reasoning rollouts and the thinking fusion mode from Qwen3, at different layers of abstraction.
 
 #### Entropy in the RL Reasoning Phase
 
@@ -64,28 +64,11 @@ I wonder, how much entropy is too much entropy? I wish the [entropy mechanism pa
 They took out the KL term in the RL phase of the pipeline (recall that the m1 and the magistral and probably a few other papers do not have a KL term in the RL objective)! But KL distillation, ah the good teacher and the professor forcing (so to speak, those are the titles of the papers!) can be used to train lightweight smaller models from rollouts from the heavyweight models (trained through the (pretraining -> Long CoT cold start -> reasoning RL -> thinking mode fusion -> general RL) pipeline). It seems inefficient that one must have `log_proba` access to the heavyweight model logits to compute this update, though probably better generalization than if one only had the rollouts.
 
 
-#### Inference Throughput and On Policy Data Collection Tradeoff
-
-Inference throughput
+*Thank you to SZ for amplifying my inspiration with random words like rollouts and transformers. Next, closed weight frontier model techniques.*
 
 
-*Thank you to SZ for amplifying my inspiration with random words like rollouts and transformers.*
-
-### Refs
-
-<a id="1">[1]</a> 
-m1
-
-<a id="2">[1]</a> 
-qwen3
 
 
-<a id="3">[1]</a> 
-magistral
-
-
-<a id="4">[1]</a> 
-pipeline rl
 
 
 
