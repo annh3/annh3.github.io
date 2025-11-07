@@ -24,6 +24,8 @@ The KL term, these days, is left out of most reasoning model objective functions
 
 Anyway the point of this above sections was to point out the similarity between the fork in the road reflection tokens in the reasoning rollouts and the thinking fusion mode from qwen3, at different layers of abstraction.
 
+#### Entropy in the RL Reasoning Phase
+
 #### KL Distillation
 
 We took out the KL term in the RL phase of the pipeline (recall that the m1 and the magistral and probably a few other papers do not have a KL term in the RL objective)! But KL distillation, ah the good teacher and the professor forcing (so to speak, those are the titles of the papers!) can be used to train lightweight smaller models from rollouts from the heavyweight models (trained through the (pretraining -> Long CoT cold start -> reasoning RL -> thinking mode fusion -> general RL) pipeline). It seems inefficient that one must have access to the heavyweight model logits to compute this update, though probably better generalization than if one only had the rollouts.
