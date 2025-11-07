@@ -43,7 +43,7 @@ There are several ways to optimize for entropy of a reasoning RL policy
 
 I imagine this is adding $$- \beta H(x)$$ in the objective function.
   
-3. $$\epsilon_{high}$$ in the clip function of a GRPO objective
+2. $$\epsilon_{high}$$ in the clip function of a GRPO objective
 
 This is what [magistral](https://arxiv.org/pdf/2506.10910) does, they say they that entropy bonus of method 1 causes instability. The basic modification to the GRPO function is to adjust the clipping threshold.
 
@@ -52,7 +52,7 @@ $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t},
 $$\epsilon_{high}$$ allows for $$\pi_{cur}$$ to deviate from $$\pi_{ref}$$, which adjusting the $\beta$ term on a KL penalty could do.
 
    
-5. Converting the clip into a stop_gradient and masking in the CISPO objective
+3. Converting the clip into a stop_gradient and masking in the CISPO objective
 
 The stop_gradient is implement by returning None in the backward pass of an autodifferentiation graph, treating the variable like a constant. The difference with clipping is that the high IS term $$r_{i,t}$$ is part of the loss computation and weights the fork in the road tokens which contribute to high entropy (exploration) in the loss function accordingly. I'm not sure what the m1 paper means by 'clipped_out' as a token, my guess is that the token's `log_proba` needs to be high enough relative to the non exploration tokens. I'm curious about this.
 
