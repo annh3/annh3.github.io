@@ -52,7 +52,7 @@ $\epsilon_{high}$ allows for $pi_{cur}$ to deviate from $pi_{ref}$, which adjust
    
 5. Converting the clip into a stop_gradient and masking in the CISPO objective
 
-The stop_gradient is implement by returning None in the backward pass of an autodifferentiation graph, treating the variable like a constant. The difference with clipping is that the high IS term $r_{i,t}$ is part of the loss computation and weights the fork in the road tokens which contribute to high entropy (exploration) in the loss function accordingly. 
+The stop_gradient is implement by returning None in the backward pass of an autodifferentiation graph, treating the variable like a constant. The difference with clipping is that the high IS term $r_{i,t}$ is part of the loss computation and weights the fork in the road tokens which contribute to high entropy (exploration) in the loss function accordingly. I'm not sure what the m1 paper means by 'clipped_out' as a token, my guess is that the token's `log_proba` needs to be high enough relative to the non exploration tokens. I'm curious about this.
 
 ```
 ```
