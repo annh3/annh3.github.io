@@ -13,18 +13,40 @@ The long reflection tokens from the [m1](https://arxiv.org/pdf/2506.13585), *'Ho
 #### PPO Objective Function Minus the KL Term
 $$J(\theta) = \mathbb{E}[\frac{1}{|o_i|}] \sum_{t=1}^{|o_i|} min(r_{i,t}A_{i,t}, clip(r_{i,t}, 1-\epsilon, 1+\epsilon)A_{i,t}) $$
 
+#### GRPO Objective function
+
+$$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} $$
+
+
 #### CISPO Objective function
 $$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum_{t=1}^{|o_i|} sg(r_{i,t})A_{i,t} \log \pi_{\theta}(o_{i,t} \mid q, o_{i,\text{prev}})\right]$$
 
 The main insight from GSPO and GRPO, the "group part", is that one may approximate the baseline term (V) in an advantage computation $$A = R - V$$ with the average summed return of the group rollouts, the many completions for a fixed prompt, the (Prover, Verifier pairs). 
 
-I shouted to S.Z., why was the entire section about the long reflection tokens in the m1 paper necessary??? I wonder if one studied the long reflection tokens from the m1 papers in Euclidean Space post post-training they would belong in the same subspace. Why am I always becoming an interpretability girlie, against my better judgment?! She said, I wonder about the false positives for the reflection tokens? I said, I can imagine some trigger words. Who would have thought that one could simply inspect conditional probabilities?
+I shouted to S.Z., why was the entire section about the long reflection tokens in the m1 paper necessary??? I wonder if one studied the long reflection tokens from the m1 papers in Euclidean Space post post-training they would belong in the same subspace. Why am I always becoming an interpretability girlie, against my better judgment?! She said, I wonder about the false positives for the reflection tokens? I said, I can imagine some trigger words. (...) Who would have thought that one could simply inspect conditional probabilities?
 
 The KL term, these days, is left out of most reasoning model objective functions as [policies deviate wildly from the reference policy](https://arxiv.org/pdf/2506.10910) anyway. I shouted to A.L., the rollout completion length penalty in section 2.2.3 of the [magistral](https://arxiv.org/pdf/2506.10910) paper makes no sense! Why not just append a STOP_THINKING token after correct reasoning traces and move this upstream to the Long CoT cold start behavior imitation stage of the post raining post training reasoning rl pipeline? I finally figured out how to do las vegas algorithms with foundation models, I had been thinking forever. Computability theory, my OG.
 
 Anyway the point of this above sections was to point out the similarity between the fork in the road reflection tokens in the reasoning rollouts and the thinking fusion mode from qwen3, at different layers of abstraction.
 
 #### Entropy in the RL Reasoning Phase
+
+Papers such as [this one](https://arxiv.org/abs/2505.22617) talk about the importance of the entropy of the optimized policy for downstream performance, fitting the equation $R = -a * e^{H} + b$ (H is always between 0 and 1 so $e^{H}$ is an convex curve inverted by the $-a$. The downstream evaluations are datasets such as OMNI-BENCH, AIME 2024, et cetera. (Recall that foundation models have a `log_proba` or `proba` function which allows you to compute $H = - p \sum \log p$). 
+
+There are several ways to optimize for entropy of a reasoning RL policy
+
+1. Entropy Bonus in the objective function
+
+I heard this 
+  
+3. $\epsilon_{high}$ in the clip function of a GRPO objective
+
+This is what [magistral](https://arxiv.org/pdf/2506.10910) does, they say they that entropy bonus of method 1 causes instability. 
+   
+5. Converting the clip into a stop_gradient in the CISPO objective
+
+I wonder, how much entropy is too much entropy? I wish the [entropy mechanism paper]((https://arxiv.org/abs/2505.22617)) had just reported on an exact value of $H$, if it exists, for the downstream tasks. I suppose the predictive equation is more flexibile as tasks become ever more computationally difficult.
+
 
 #### KL Distillation
 
