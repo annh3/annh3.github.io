@@ -41,7 +41,7 @@ There are several ways to optimize for entropy of a reasoning RL policy
 
 1. Entropy Bonus in the objective function
 
-I imagine this is adding $- \beta H(x)$ in the objective function.
+I imagine this is adding $$- \beta H(x)$$ in the objective function.
   
 3. $$\epsilon_{high}$$ in the clip function of a GRPO objective
 
