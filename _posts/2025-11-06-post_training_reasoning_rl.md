@@ -23,7 +23,7 @@ $$J(\theta) = \mathbb{E}\left[\frac{1}{\sum_{i=1}^{G} |o_i|} \sum_{i=1}^{G} \sum
 
 where $$M_{i,t} = 0$$ if $$A_{i,t} > 0$$ and $$r > 1 + \epsilon_{high}$$, $$M_{i,t} = 0$$ if $$A_{i,t} < 0$$ and $$r < 1 + \epsilon_{low}$$ and $$1$$ otherwise. 
 
-The main insight from GSPO and GRPO, the "group part", is that one may approximate the baseline term (V) in an advantage computation $$A = R - V$$ with the average summed return of the group rollouts, the many completions for a fixed prompt, the (Prover, Verifier pairs). 
+The main insight from PPO to GRPO, the "group part", is that one may approximate the baseline term (V) in an advantage computation $$A = R - V$$ with the average summed return of the group rollouts, the many completions for a fixed prompt, the (Prover, Verifier pairs). 
 
 The main insight from GRPO to CISPO is that transforming the clipping of $$r_{i,t}A_{i,t}$$ into a mask allows one to inspect $$r_{i,t}$$ and $$A_{i,t}$$ and mask them out if both are over or under flow. I assume the 'Aha', 'Wait!' tokens have consistently high $$A_{i,t}$$ but decreasing $$r_{i,t}$$ as the policy learning weights them higher over time.
 
