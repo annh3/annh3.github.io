@@ -38,6 +38,22 @@ $$
 \end{align*}
 $$
 
+So
+
+$$\log p(x) = \mathcal{L} + D_{KL}(q_{\phi}(z|x) || p(z | x)) $$
+
+Since $D_{KL}$ is non-negative, $\mathcal{L}$ is a lower bound on $\log p(x)$. 
+
+We can then write $\mathcal{L}$, the ELBO, as 
+
+$$
+\begin{align*}
+\mathcal{L} &= \int_z q_{\phi}(z|x) \log \dfrac{p_{\theta}(z,x)}{q_{\phi}(z|x)} dz \\
+&= \int_z q_{\phi}(z|x) \log \dfrac{p_{\theta}(x|z) p(z)}{q_{\phi}(z|x)} dz\\
+&= \mathbb{E}_{z \sim q_{\phi}(z|x)}[p_{\theta}(x|z)] - D_{KL} (q_{\phi}(z|x) || p(z))\\
+\end{align*}
+$$
+
 #### TODO: Convergence of Metropolis Hastings
 #### TODO: Analytically integrate KL of two Gaussians
 
