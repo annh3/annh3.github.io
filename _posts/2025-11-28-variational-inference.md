@@ -27,6 +27,17 @@ Among other methods which use information from training to guide sampling, varia
 
 Starting with the expression for the KL divergence between the learned model $q_{\phi}(z|x)$ and the true posterior $p(z|x)$, we can derive the evidence lower boound (ELBO) which is a lower bound on $p(x)$ and an objective that through maximizing we can obtain an estimate for $p(x)$, converting the inference problem into an optimization problem. 
 
+The derivation is
+
+$$
+\begin{align*} D_{KL}(q_{\phi}(z|x) || p(z | x)) &= \int_z q_{\phi}(z|x) \log \dfrac{q_{\phi}(z|x)}{p(z|x)} dz \\
+&= - \int_z q_{\phi}(z|x) \log \dfrac{p(z|x)}{q_{\phi}(z|x)} dz \\
+&= - \int_z q_{\phi}(z|x) \log \dfrac{p(z,x)}{q_{\phi}(z|x)p(x)} dz \\
+&= - (\int_z q_{\phi}(z|x) \log \dfrac{p(z,x)}{q_{\phi}(z|x)} dz - \int_z q_{\phi}(z|x) \log p(x) dz ) \\
+&= - \int_z q_{\phi}(z|x) \log \dfrac{p(z,x)}{q_{\phi}(z|x)} dz + \log p(x)
+\end{align*}
+$$
+
 #### TODO: Convergence of Metropolis Hastings
 #### TODO: Analytically integrate KL of two Gaussians
 
