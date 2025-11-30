@@ -30,7 +30,7 @@ Starting with the expression for the KL divergence between the learned model $q_
 The derivation is
 
 $$
-\begin{align*} D_{KL}(q_{\phi}(z|x) || p(z | x)) &= \int_z q_{\phi}(z|x) \log \dfrac{q_{\phi}(z|x)}{p(z|x)} dz \\
+\begin{align*} D_{KL}(q_{\phi}(z|x) \\| p(z | x)) &= \int_z q_{\phi}(z|x) \log \dfrac{q_{\phi}(z|x)}{p(z|x)} dz \\
 &= - \int_z q_{\phi}(z|x) \log \dfrac{p(z|x)}{q_{\phi}(z|x)} dz \\
 &= - \int_z q_{\phi}(z|x) \log \dfrac{p(z,x)}{q_{\phi}(z|x)p(x)} dz \\
 &= - (\int_z q_{\phi}(z|x) \log \dfrac{p(z,x)}{q_{\phi}(z|x)} dz - \int_z q_{\phi}(z|x) \log p(x) dz ) \\
@@ -57,5 +57,14 @@ $$
 #### TODO: Convergence of Metropolis Hastings
 #### Analytic Integral of the KL Divergence of two Gaussians
 
-The ELBO contains a $- D_{KL} (q_{\phi}(z|x) \\| p(z))$ term. 
+The ELBO contains a $- D_{KL} (q_{\phi}(z|x) \\| p(z))$ term. We can integrate this expression analytically with a combination of algebra, properties of integrating probability distributions and the trace trick for expectations of quadratic forms.
+
+First, lets be explicit about the expressions for two pdfs.
+
+$$
+q(z) = \mathcal{N}(z; \mu, \sigma^2) = \dfrac{1}{\sqrt{(2 \pi)^J |\Sigma|}} exp(-\frac{1}{2} (z - \mu)^T \Sigma^{-1} (z - \mu))
+$$
+$$
+p(z) = \mathcal{N}(z; 0, 1) = \dfrac{1}{\sqrt{(2 \pi)^J |I|}} exp(-\frac{1}{2} (z - \mu)^T I (z - \mu))
+$$
 
