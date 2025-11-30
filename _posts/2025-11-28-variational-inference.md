@@ -68,3 +68,20 @@ $$
 p(z) = \mathcal{N}(z; 0, 1) = \dfrac{1}{\sqrt{(2 \pi)^J |I|}} exp(-\frac{1}{2} (z - \mu)^T I (z - \mu))
 $$
 
+Now let's go through the trace trick for the expectations of quadratic forms, which will come in handy a couple of times in our analysis.
+
+##### Trace Trick for Expectations of Quadratic Forms
+
+Let $(z-\mu)^T A (z - \mu)$ be the quadratic form.
+
+1. A quadratic form is a scalar, so it is its own trace
+$\mathbb{E}[(z - \mu)^T A (z - \mu)] = \mathbb{E}[tr((z - \mu)^T A (z - \mu))]$
+
+2. Cyclic property of trace means $tr(ABC) = tr(BCA) = tr(CAB)$
+
+3. Linearity of expectation through the trace operator
+
+These three properties usually allow us write the expectation of a quadratic form as a sum of known quantities.
+
+
+   
