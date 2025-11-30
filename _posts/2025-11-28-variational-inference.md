@@ -89,7 +89,7 @@ First let's write the $\log$ of $q(z)$
 
 $$
 \begin{align*}
-\log q(z) = \log (\dfrac{1}{\sqrt((2\pi)^J \prod_{j=1}^J \sigma_j^2)}) - \frac{1}{2}(z - \mu)^T \Sigma^{-1}(z - \mu)
+\log q(z) &= \log (\dfrac{1}{\sqrt((2\pi)^J \prod_{j=1}^J \sigma_j^2)}) - \frac{1}{2}(z - \mu)^T \Sigma^{-1}(z - \mu) \\
 \end{align*}
 $$
    
