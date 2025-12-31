@@ -30,10 +30,10 @@ SFT.
 
 ### But isn't this kind of ambiguous?
 
-*Let's say that you have an inference and training setup in which the inference server does $B$ episodes/trajectories
+*Let's say that you have an inference and training setup in which the inference server does $$B$$ episodes/trajectories
 then collects the data and does a weight update, then broadcasts the new weights to the inference servers. Then during
-the weight update, if the optimization batch size is $b << B$, then essentially off policy RL is happening. The batch
-of $B$ episodes/trajectories is basically a replay buffer*
+the weight update, if the optimization batch size is $$b << B$$, then essentially off policy RL is happening. The batch
+of $$B$$ episodes/trajectories is basically a replay buffer*
 
 ### Btw, here's how to do importance weighting
 
