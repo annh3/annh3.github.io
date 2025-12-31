@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Lifting the Conceptual Bludgeon from On and Off Policy Reinforcement Learning
-published: false
+title: Lifting the Conceptual Bludgeon Off On and Off Policy Reinforcement Learning
+published: true
 usemathjax: true
 tags: reinforcement learning, on policy, off policy, inference, real world application
 ---
@@ -24,7 +24,7 @@ that the policy converges to the intended or optimal distribution, something whi
 re-weighting empirical data so that the estimate of the expected return, part of the optimization target, is computed more
 accurately, or is an unbiased estimator. 
 
-The goodness of on-policyness can even be linked to capacity efficiency, i.e. why approximating with low rank adapaters and
+The goodness of on-policyness can even be linked to [capacity efficiency](https://thinkingmachines.ai/blog/lora/), i.e. why approximating with low rank adapaters and
 reinforcement learning on the same dataset achieves the same TestNLL, or some measure of generalization error, as full capacity
 SFT.
 
@@ -36,7 +36,7 @@ the weight update, if the optimization batch size is $b << B$, then essentially 
 of $B$ episodes/trajectories is basically a replay buffer.*
 
 In other words, in the wild, foundation models are usually distributed across GPUs (which can be in a given GPU cluster or node or across nodes), 
-so in particular inference is on a different computer than training. There are a bunch of things to optimize in such a setup, but for the wild (the wild on-policy RL!), we'd like to maximize GPU utilization while staying as on-policy as possible (who knows what unit that is measured in? I would really like to know). In the paradigm of flight updates, after each optimizer (optim.step() in your torch or whatever code) step, updated weights are broadcast to the inference server. This is really cool. Would be even cooler to customize the step delay to broadcast. In some sort of limit, some sort of repeated off-policy rl is basically on-policy rl!
+so in particular inference is on a different computer than training. There are a bunch of things to optimize in such a setup, but for the wild (the wild on-policy RL!), we'd like to maximize GPU utilization while staying as on-policy as possible (who knows what unit that is measured in? I would really like to know). In the paradigm of [in flight updates](https://github.com/ServiceNow/PipelineRL-SWE), after each optimizer (optim.step() in your torch or whatever code) step, updated weights are broadcast to the inference server. This is really cool. Would be even cooler to customize the step delay to broadcast. In some sort of limit, some sort of repeated off-policy rl is basically on-policy rl!
 
 ### Btw, here's how to do importance weighting
 
