@@ -90,7 +90,7 @@ $$\mathbb{E}[(z - \mu)^T A (z - \mu)] = \mathbb{E}[\text{tr}((z - \mu)^T A (z - 
 
 ##### The Derivation of Closed Form KL Divergence of Two Gaussians
 
-The overall structure was:
+The overall structure was: <br>
 1\. Notice that $$D_{KL} (q(z|x) \| p(z)) = \int q(z)(\log p(z) - \log q(z)) dz$$ which decomposes to $$\int q(z) \log p(z) dz$$ and $$\int q(z) \log q(z) dz$$ <br>
 2\. Compute $$\int q(z) \log p(z) dz$$ and $$\int q(z) \log q(z) dz$$ separately and add them back together <br>
 
