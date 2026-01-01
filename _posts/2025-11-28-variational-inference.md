@@ -91,7 +91,7 @@ $\mathbb{E}[(z - \mu)^T A (z - \mu)] = \mathbb{E}[tr((z - \mu)^T A (z - \mu))]$
 
 These three properties usually allow us write the expectation of a quadratic form as a sum of known quantities.
 
-##### The Derivation of D_{KL} (q(z|x) \\| p(z))$
+##### The Derivation of closed form KL divergence of two Gaussians$
 
 The overall structure which helped me was,
 0. Notice that $D_{KL} (q(z|x) \\| p(z)) = \int q(z)(\log p(z) - log(z)) dz$ which decomposes to $\int q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$
