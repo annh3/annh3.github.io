@@ -58,7 +58,9 @@ $$
 
 #### Analytic Integral of the KL Divergence of two Gaussians
 
-The ELBO contains a $$- D_{KL} (q_{\phi}(z|x) \| p(z))$$ term. We can integrate this expression analytically with a combination of algebra, properties of integrating probability distributions and the trace trick for expectations of quadratic forms.
+The ELBO contains a 
+$$- D_{KL} (q_{\phi}(z|x) \| p(z))$$ 
+term. We can integrate this expression analytically with a combination of algebra, properties of integrating probability distributions and the trace trick for expectations of quadratic forms.
 
 First, let's be explicit about the expressions for two PDFs:
 
