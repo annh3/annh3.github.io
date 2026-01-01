@@ -69,6 +69,13 @@ $$
 p(z) = \mathcal{N}(z; 0, 1) = \dfrac{1}{\sqrt{(2 \pi)^J |I|}} exp(-\frac{1}{2} (z - \mu)^T I (z - \mu))
 $$
 
+Second, let's write down some mathematical expressions about multivariate Gaussians
+
+#### multivariate Gaussian facts
+
+1. $Cov(z) = \mathbb{E}_{z}[(z - \mu)(z - \mu)^T] = \Sigma$ where $\Sigma$ is the covariance matrix
+2. $\mathbb{E}[z] = \mu$
+
 Now let's go through the trace trick for the expectations of quadratic forms, which will come in handy a couple of times in our analysis.
 
 ##### Trace Trick for Expectations of Quadratic Forms
@@ -84,6 +91,16 @@ $\mathbb{E}[(z - \mu)^T A (z - \mu)] = \mathbb{E}[tr((z - \mu)^T A (z - \mu))]$
 
 These three properties usually allow us write the expectation of a quadratic form as a sum of known quantities.
 
+##### The Derivation of D_{KL} (q(z|x) \\| p(z))$
+
+The overall structure which helped me was,
+0. Notice that $D_{KL} (q(z|x) \\| p(z)) = \int q(z)(\log p(z) - log(z)) dz$ which decomposes to $\int q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$
+1. Compute $q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$ separately and add them back together
+
+To calculate $\int q(z) \log q(z) dz$
+1. Simplify $\log q(z)$
+2. Distribute $\int q(z)$
+
 Let's start with $\int_{z} q(z) \log q(z) dz$.
 
 First let's write the $\log$ of $q(z)$
@@ -93,4 +110,17 @@ $$
 \log q(z) &= \log (\dfrac{1}{\sqrt((2\pi)^J \prod_{j=1}^J \sigma_j^2)}) - \frac{1}{2}(z - \mu)^T \Sigma^{-1}(z - \mu) \\
 \end{align*}
 $$
-   
+
+Now let's distribute $\int q(z)$
+
+$$
+\begin{align*}
+\int_{z} q(z) \log q(z) dz &= \log (\dfrac{1}{\sqrt((2\pi)^J \prod_{j=1}^J \sigma_j^2)}) \int_{z} q(z) dz - \frac{1}{2} \mathbb{E}_{z} [(z - \mu)^T \sigma^{-1} (z - mu)]
+&= \log 1 - log ((2 \pi)^{J/2}(\prod_{j=1}^J \sigma_{j}^2)^{1/2}) - frac{1}{2} \mathbb{E}_{z} [tr(\Sigma^{-1} (z - \mu) (z - \mu)^T)] \\
+&= - \frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^{J} \log \sigma_{j}^2 - \frac{1}{2} tr(\mathbb{E}_z[\Sigma^{-1} \Sigma]) \\
+&= - \frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^{J} \log \sigma_{j}^2 - \frac{J}{2}
+\end{align*} \\
+&= -\frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^J (1 + \log \sigma_{j}^2)
+$$
+
+The computation of $q(z) \log p(z) dz$ is probably similar!
