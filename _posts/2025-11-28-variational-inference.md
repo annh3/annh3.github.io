@@ -14,7 +14,7 @@ Almost all observed data is the result of some process with hidden latent factor
 2\. Learn a likelihood function $$p(x \mid z)$$, or decoder <br>
 3\. Apply Bayes' rule $$p(z|x) = \frac{p(x|z)p(z)}{\int_z p(x|z)p(z) dz}$$ to learn the posterior distribution, which describes what is known about $$z$$ after observing the data $$x$$ <br>
 
-The issue is that computing $p(z \mid x)$ is not feasible for a number of reasons because marginalization in the denominator becomes computationally intractable when the variables become high dimensional. In other words, uncertainty is expensive, and approximate inference methods all get at finding $p(x)$ without integrating over all configurations of latents. 
+The issue is that computing $$p(z \mid x)$$ is not feasible for a number of reasons because marginalization in the denominator becomes computationally intractable when the variables become high dimensional. In other words, uncertainty is expensive, and approximate inference methods all get at finding $$p(x)$$ without integrating over all configurations of latents. 
 
 Markov Chain Monte Carlo (MCMC) methods and Variational Bayesian methods differ in whether they explicitly model $$p(z|x)$$, the decoder or recognition model. 
 
