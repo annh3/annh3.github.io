@@ -74,37 +74,37 @@ $$
 
 #### Multivariate Gaussian Facts
 
-1. $\text{Cov}(z) = \mathbb{E}_{z}[(z - \mu)(z - \mu)^T] = \Sigma$ where $\Sigma$ is the covariance matrix
-2. $\mathbb{E}[z] = \mu$
+1\. $$\text{Cov}(z) = \mathbb{E}_{z}[(z - \mu)(z - \mu)^T] = \Sigma$$ where $$\Sigma$$ is the covariance matrix <br>
+2\. $$\mathbb{E}[z] = \mu$$ <br>
 
 ##### Trace Trick for Expectations of Quadratic Forms
 
-Let $(z-\mu)^T A (z - \mu)$ be the quadratic form.
+Let $$(z-\mu)^T A (z - \mu)$$ be the quadratic form.
 
-1. A quadratic form is a scalar, so it is its own trace
-$\mathbb{E}[(z - \mu)^T A (z - \mu)] = \mathbb{E}[\text{tr}((z - \mu)^T A (z - \mu))]$
+1\. A quadratic form is a scalar, so it is its own trace
+$$\mathbb{E}[(z - \mu)^T A (z - \mu)] = \mathbb{E}[\text{tr}((z - \mu)^T A (z - \mu))]$$ <br>
 
-2. Cyclic property of trace means $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$
+2\. Cyclic property of trace means $$\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$$ <br>
 
-3. Linearity of expectation through the trace operator
+3\. Linearity of expectation through the trace operator
 
 ##### The Derivation of Closed Form KL Divergence of Two Gaussians
 
 The overall structure was:
-1. Notice that $D_{KL} (q(z|x) \| p(z)) = \int q(z)(\log p(z) - \log q(z)) dz$ which decomposes to $\int q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$
-2. Compute $\int q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$ separately and add them back together
+1\. Notice that $$D_{KL} (q(z|x) \| p(z)) = \int q(z)(\log p(z) - \log q(z)) dz$$ which decomposes to $$\int q(z) \log p(z) dz$$ and $$\int q(z) \log q(z) dz$$ <br>
+2\. Compute $$\int q(z) \log p(z) dz$$ and $$\int q(z) \log q(z) dz$$ separately and add them back together <br>
 
-To calculate $\int q(z) \log q(z) dz$:
-1. Simplify $\log q(z)$
-2. Distribute $\int q(z)$
+To calculate $$\int q(z) \log q(z) dz$$:
+1\. Simplify $$\log q(z)$$ <br>
+2\. Distribute $$\int q(z)$$ <br>
 
-First, write the $\log$ of $q(z)$:
+First, write the $$\log$$ of $$q(z)$$:
 
 $$
 \log q(z) = \log \left(\frac{1}{\sqrt{(2\pi)^J \prod_{j=1}^J \sigma_j^2}}\right) - \frac{1}{2}(z - \mu)^T \Sigma^{-1}(z - \mu)
 $$
 
-Now, distribute $\int q(z)$:
+Now, distribute $$\int q(z)$$:
 
 $$
 \begin{align*}
@@ -116,4 +116,4 @@ $$
 \end{align*}
 $$
 
-The computation of $\int q(z) \log p(z) dz$ follows a similar approach!
+The computation of $$\int q(z) \log p(z) dz$$ follows a similar approach!
