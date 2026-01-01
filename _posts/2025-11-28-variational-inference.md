@@ -115,12 +115,12 @@ Now let's distribute $\int q(z)$
 
 $$
 \begin{align*}
-\int_{z} q(z) \log q(z) dz &= \log (\dfrac{1}{\sqrt((2\pi)^J \prod_{j=1}^J \sigma_j^2)}) \int_{z} q(z) dz - \frac{1}{2} \mathbb{E}_{z} [(z - \mu)^T \sigma^{-1} (z - mu)]
-&= \log 1 - log ((2 \pi)^{J/2}(\prod_{j=1}^J \sigma_{j}^2)^{1/2}) - frac{1}{2} \mathbb{E}_{z} [tr(\Sigma^{-1} (z - \mu) (z - \mu)^T)] \\
+\int_{z} q(z) \log q(z) dz &= \log \left(\dfrac{1}{\sqrt{(2\pi)^J \prod_{j=1}^J \sigma_j^2}}\right) \int_{z} q(z) dz - \frac{1}{2} \mathbb{E}_{z} [(z - \mu)^T \Sigma^{-1} (z - \mu)] \\
+&= \log 1 - \log ((2 \pi)^{J/2}(\prod_{j=1}^J \sigma_{j}^2)^{1/2}) - \frac{1}{2} \mathbb{E}_{z} [tr(\Sigma^{-1} (z - \mu) (z - \mu)^T)] \\
 &= - \frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^{J} \log \sigma_{j}^2 - \frac{1}{2} tr(\mathbb{E}_z[\Sigma^{-1} \Sigma]) \\
-&= - \frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^{J} \log \sigma_{j}^2 - \frac{J}{2}
-\end{align*} \\
+&= - \frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^{J} \log \sigma_{j}^2 - \frac{J}{2} \\
 &= -\frac{J}{2} \log (2 \pi) - \frac{1}{2} \sum_{j=1}^J (1 + \log \sigma_{j}^2)
+\end{align*}
 $$
 
 The computation of $q(z) \log p(z) dz$ is probably similar!
