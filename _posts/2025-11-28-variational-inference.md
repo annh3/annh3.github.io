@@ -94,8 +94,8 @@ These three properties usually allow us write the expectation of a quadratic for
 ##### The Derivation of closed form KL divergence of two Gaussians$
 
 The overall structure which helped me was,
-0. Notice that $D_{KL} (q(z|x) \\| p(z)) = \int q(z)(\log p(z) - log(z)) dz$ which decomposes to $\int q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$
-1. Compute $q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$ separately and add them back together
+1. Notice that $D_{KL} (q(z|x) \\| p(z)) = \int q(z)(\log p(z) - log(z)) dz$ which decomposes to $\int q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$
+2. Compute $q(z) \log p(z) dz$ and $\int q(z) \log q(z) dz$ separately and add them back together
 
 To calculate $\int q(z) \log q(z) dz$
 1. Simplify $\log q(z)$
