@@ -1,7 +1,7 @@
 ---
 layout: post
 title: from MCMC to Variational Inference
-published: false
+published: true
 usemathjax: true
 tags: approximate inference, derivation, theoretical history
 ---
