@@ -6,6 +6,8 @@ usemathjax: true
 tags: approximate inference, derivation, theoretical history
 ---
 
+*In which this became an exercise in deriving the closed form gaussian KL expression from [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114)*
+
 Almost all observed data is the result of some process with hidden latent factors.
 Bayesian analysis provides a recipe for learning from that data $x$ and the unknown latent variables $z$.
 
