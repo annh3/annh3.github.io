@@ -102,7 +102,7 @@ $$
 \log q(z) = \log \left(\frac{1}{\sqrt{(2\pi)^J \prod_{j=1}^J \sigma_j^2}}\right) - \frac{1}{2}(z - \mu)^T \Sigma^{-1}(z - \mu)
 $$
 
-Now, distribute $\int q(z)$:
+Now, distribute $$\int q(z)$$:
 
 $$
 \begin{align*}
