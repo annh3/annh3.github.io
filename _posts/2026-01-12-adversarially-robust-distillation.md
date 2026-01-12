@@ -26,6 +26,8 @@ But before getting into the details of *inner maximizers*, let's dive into the c
 
 Recall that strong duality occurs when the primal function ($$min f_{\theta}(x)$$) is convex and the constraints are convex. Sometimes, there are other routes to proving that a primal function is convex, including Slater's conditions. Sometimes, there is a connection to the primal function's polynomial time computability. But for now, let's just see how strong duality connects to the saddle point equation. 
 
+When strong duality holds, the primal and dual functions are solved at the same points, i.e. if $$L(x,\lambda)$$ is the Langrangian then $$\inf \sup L(x, \lambda) = \sup \inf_{x} L(x, \lambda)$$ where $$\inf_{x} L(x, \lambda)$$ is the definition of the dual. Recall that the LHS is the form of the saddle point equation. Here's an illustration of strong and weak duality.
+
 
 #### More
 
