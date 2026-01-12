@@ -42,8 +42,19 @@ The projected gradient descent (PGD) from Madry is weird the equation is
 
 $$x^{t+1} = \prod_{x + \mathcal{S}} (x^{t} + \alpha sign (\nabla_{x} L(\theta, x, y)))$$
 
-I was so confused about why the iterative attack is multiplicative. 
+I was so confused about why the iterative attack is multiplicative, since most gradient ascenders or descenders I've encountered like e.g. SGD (stochastic gradient descent) are additive. A quick search on the internet suggested that the form could enforce variables to be positive, so as a circuit, it is like the *AND* operation. 
 
+Another example is the papernot attack. 
+
+In general, advesrarial examples can be found within any $\mathcal{S}$, i.e. any L-norm can be used as a stopping condition for iterative attacks.
+
+For example, Papernot's attack as written is done with the L-0 norm, aka count the number of pixels that are changed. The algorithm masks some subset of pixels at each iteration. How? By differentiating the loss function wrt the input vector. So basically, treating Papernot's as a black box algorithm, to generate adversarial examples, start with some image and set any wrong classification label, and run the algorithm to produce image perturbations close to the original image.
+
+The route to ADL started from model distillation, which I'm curious about since in general  I'm interested in efficient ways to train models.
+
+For a basic intuition of model distillation, we can think about a cross entropy loss function. For classification tasks, $$\sum_{p} p \log q$$ pushes the correct class logit higher. In distillation, the KL divergence term $$\sum_{p} \log \frac{q}{p}$$ is computed with $$p$$ being the student distribution and $$q$$ being the teacher distribution, so in particular the network learns for example that St. Bernard is more similar to Dalmation than either are to bird. 
+
+Sometimes, adversarial robustness doesn't transfer to the student through distillation, and so ARD is a version of distillation where given an adversarial dataset for the learning task, distillation is done by matching teacher logits within $$\epsilon$$-radius of training samples. So KL matching is done also with the datapoints of $$\mathcal{S}$$.
 
 #### More
 
