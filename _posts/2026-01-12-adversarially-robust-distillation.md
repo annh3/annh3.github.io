@@ -28,7 +28,7 @@ Recall that strong duality occurs when the primal function ($$min f_{\theta}(x)$
 
 When strong duality holds, the primal and dual functions are solved at the same points, i.e. if $$L(x,\lambda)$$ is the Langrangian then $$\inf \sup L(x, \lambda) = \sup \inf_{x} L(x, \lambda)$$ where $$\inf_{x} L(x, \lambda)$$ is the definition of the dual. Recall that the LHS is the form of the saddle point equation. Here's an illustration of strong and weak duality. (Thank you, google docs drawing function!)
 
-![strong duality](https://github-production-user-asset-6210df.s3.amazonaws.com/13157550/534736917-3d4676cf-9a71-4a05-8f18-9390569ba263.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20260112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260112T191433Z&X-Amz-Expires=300&X-Amz-Signature=aac5ee924933dfd8680688823aac0c13622d3e20d6a154645744839aae258a4b&X-Amz-SignedHeaders=host)
+![strong duality](https://i.pinimg.com/736x/87/6f/34/876f34e81bd9299002b65536a22faec7.jpg)
 
 
 According to the Madry paper, Daskin's theorem says that you can simply compute the outer loss function at maximizers of the inner function. That means that making some sort of assumption similar to the assumption made by strong duality in the context of convext optimization means that you can just compute adversarial data points statically aka adversarially robust deep learning is just data augmentation. What's annoying is that the assumptions of outer function smoothness don't even hold since neural networks are not continuous due to their ReLU and other discontinuous components, but basically, you can think of them as continuous for the purposes of ADL. 
