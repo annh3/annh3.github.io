@@ -59,12 +59,12 @@ Sometimes, adversarial robustness doesn't transfer to the student through distil
 
 #### More
 
-1. (Adversarialy Robust Distillation)[https://arxiv.org/abs/1905.09747]
-2. (Towards Deep Learning Models Resistant to Adversarial Attacks)[https://arxiv.org/pdf/1706.06083]
-3. (Intriguing Properties of Neural Networks)[https://arxiv.org/abs/1312.6199]
-4. (Madry and Kolter Adversarial Robustness Tutorial)[https://adversarial-ml-tutorial.org/adversarial_examples/]
-5. (Boyd and Vandenberghe Convex Optimization)[https://stanford.edu/~boyd/cvxbook/]
-6. (Duality Gap, Computational Complexity and NP Completeness: A Survey)[https://arxiv.org/abs/1012.5568]
+1. [Adversarialy Robust Distillation](https://arxiv.org/abs/1905.09747)
+2. [Towards Deep Learning Models Resistant to Adversarial Attacks](https://arxiv.org/pdf/1706.06083)
+3. [Intriguing Properties of Neural Networks](https://arxiv.org/abs/1312.6199)
+4. [Madry and Kolter Adversarial Robustness Tutorial](https://adversarial-ml-tutorial.org/adversarial_examples/)
+5. [Boyd and Vandenberghe Convex Optimization](https://stanford.edu/~boyd/cvxbook/)
+6. [Duality Gap, Computational Complexity and NP Completeness: A Survey](https://arxiv.org/abs/1012.5568)
 
 
 
