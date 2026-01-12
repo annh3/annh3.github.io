@@ -28,6 +28,7 @@ Recall that strong duality occurs when the primal function ($$min f_{\theta}(x)$
 
 When strong duality holds, the primal and dual functions are solved at the same points, i.e. if $$L(x,\lambda)$$ is the Langrangian then $$\inf \sup L(x, \lambda) = \sup \inf_{x} L(x, \lambda)$$ where $$\inf_{x} L(x, \lambda)$$ is the definition of the dual. Recall that the LHS is the form of the saddle point equation. Here's an illustration of strong and weak duality.
 
+![strong duality image](strong_duality.png)
 
 #### More
 
