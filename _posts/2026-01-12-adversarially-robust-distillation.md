@@ -46,7 +46,7 @@ I was so confused about why the iterative attack is multiplicative, since most g
 
 Another example is the papernot attack. 
 
-In general, advesrarial examples can be found within any $\mathcal{S}$, i.e. any L-norm can be used as a stopping condition for iterative attacks.
+In general, adversarial examples can be found within any $\mathcal{S}$, i.e. any L-norm can be used as a stopping condition for iterative attacks.
 
 For example, Papernot's attack as written is done with the L-0 norm, aka count the number of pixels that are changed. The algorithm masks some subset of pixels at each iteration. How? By differentiating the loss function wrt the input vector. So basically, treating Papernot's as a black box algorithm, to generate adversarial examples, start with some image and set any wrong classification label, and run the algorithm to produce image perturbations close to the original image.
 
