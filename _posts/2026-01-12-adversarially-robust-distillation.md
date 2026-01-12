@@ -6,7 +6,7 @@ usemathjax: true
 tags: adversarial robustness, distillation, saddle points, convext optimization
 ---
 
-*"It is in general that the unexplored attracts us..." - Lady Murasaki*
+*"It is in general that the unexplored attracts us" - Lady Murasaki*
 
 Let's explain the main equation from the Madry paper and then unfold that into how adversarial training is actually done in practice.
 
