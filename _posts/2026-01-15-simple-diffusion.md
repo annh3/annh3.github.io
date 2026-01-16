@@ -25,6 +25,6 @@ For this process $\beta_{t-1}, \beta_{t}, \beta_{t+1}$, which is the isotropic v
 
 Now that we've reviewed the noise schedule for the diffusion process, let's understand the generation process. 
 
-For generating or inference with a diffusion model, we go backwards in time, starting from step $T$. At a given timestep $t$, given $x_t, t$, $predict $\epsilon(x_t,t)$. Since $\epsilon(x_t, t)$ is the noise added to the pure data point from step $0$, how do we go from $x_t$ to $x_{t-1}$?
+For generating or inference with a diffusion model, we go backwards in time, starting from step $T$. At a given timestep $t$, given $x_t, t$, predict $\epsilon(x_t,t)$. Since $\epsilon(x_t, t)$ is the noise added to the pure data point from step $0$, how do we go from $x_t$ to $x_{t-1}$?
 
 We can apply Bayes Rule to known quantities. This is the DDPM reverse step formula. 
