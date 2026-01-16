@@ -15,7 +15,7 @@ $$x_t = \sqrt{1 - \beta_{t}} x_{t-1} + \beta_{t}\epsilon$$
 
 Before diving into an example implementation, let's go through the theory. The diffusion process happens for a fixed number of steps $T$. In my mind, there are two parts to this, learning the diffusion model, and generating from the diffusion model. 
 
-Learning the diffusion model is about learning a predictor for the noise added to corrupt a datapoint. I.e., given $x_t$ and $t$, learn a predictor of the noise added to create $x_t$ from $x_0$. So the u_net learns $\epsilon(x_t,t)$, the noise corruption from $x_0$. Since $q$ the forward noise process is modelled analytically, the training loop lookes like this--sample $x_0$ (raw, pure data points), sample $t$ the timestep uniformly at random, compute the corrupted datapoint $x_t$ analytically, pass $(x_t, t)$ through the forward u_net to predict the error, backpropogate on the prediction error.
+Learning the diffusion model is about learning a predictor for the noise added to corrupt a datapoint. I.e., given $x_t$ and $t$, learn a predictor of the noise added to create $x_t$ from $x_0$. So the u_net learns $\epsilon(x_t,t)$, the noise corruption from $x_0$. Since $q$ the forward noise process is modelled analytically, the training loop looks like this--sample $x_0$ (raw, pure data points), sample $t$ the timestep uniformly at random, compute the corrupted datapoint $x_t$ analytically, pass $(x_t, t)$ through the forward u_net to predict the error, backpropogate on the prediction error.
 
 So, the u_net forward pass learns to predict, given a noise corrupted data point and the time step it is, the exact noise added to the pure image. What can we do with such a predictor?
 
