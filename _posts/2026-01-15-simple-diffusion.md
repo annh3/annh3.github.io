@@ -21,7 +21,7 @@ So, the u_net forward pass learns to predict, given a noise corrupted data point
 
 Before we get into that, let's slow down to zoom in on the noise process. 
 
-For this process $\beta_t_{t \in T}$, which is the isotropic variance coefficient, is a sequence which controls the speed of data destruction. For this example, we'll do a linear schedule from $1e-4$ to $1e-2$ which is typical. Then the sequence $(\alpha_t)_{t \in T}$ is formed by $\alpha_i = 1 - \beta_i$ and then the cumulative product of the sequence is taken to create $\bar{\alpha}$ so in particular the noise coefficient $\bar{\alpha_t}$ which multiplies the signal component, i.e. the mean, becomes exponentially smaller as the process goes on, so the datapoint destruction accelerates.
+For this process $\beta_{t}_{t \in T}$, which is the isotropic variance coefficient, is a sequence which controls the speed of data destruction. For this example, we'll do a linear schedule from $1e-4$ to $1e-2$ which is typical. Then the sequence $\alpha_{t}_{t \in T}$ is formed by $\alpha_i = 1 - \beta_i$ and then the cumulative product of the sequence is taken to create $\bar{\alpha}$ so in particular the noise coefficient $\bar{\alpha_t}$ which multiplies the signal component, i.e. the mean, becomes exponentially smaller as the process goes on, so the datapoint destruction accelerates.
 
 Now that we've reviewed the noise schedule for the diffusion process, let's understand the generation process. 
 
