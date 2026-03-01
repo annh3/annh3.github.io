@@ -76,3 +76,7 @@ Here's an example of an SDE with a linear vector field, $u_(x,t) = -x-4$ and a l
   <source src="[https://annh3.github.io](https://github.com/annh3/annh3.github.io/raw/refs/heads/gh-pages/assets/simple_sde.mp4)" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+
+https://github.com/user-attachments/assets/3745af23-1356-41ca-8b0f-ec95462e9a0e
+
