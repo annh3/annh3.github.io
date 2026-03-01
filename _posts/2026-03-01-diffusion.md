@@ -14,3 +14,15 @@ All diffusion and flow processes are about a process of destroying an image or d
 An ODE is deterministic and its solution is a *trajectory* or *path*,  in other words a function of the form:
 
 $$X: [0,1] \rightarrow \mathbb{R}^d, t \rightarrow X_t$$
+
+Every ODE is defined by a *vector field*, i.e.:
+
+$$u: \mathbb{R}^d \times [0,1] \rightarrow \mathbb{R}^d, (x,t) \rightarrow u_{t}(x)$$
+
+Such that 
+
+$$\frac{d}{dt} X_t = u_t(X_t)$$
+
+and 
+
+$$X_0 = x_0$$
