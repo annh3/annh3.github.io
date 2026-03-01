@@ -26,3 +26,11 @@ $$\frac{d}{dt} X_t = u_t(X_t)$$
 and 
 
 $$X_0 = x_0$$
+
+It helps to think of ODEs in terms of physical concepts. The vector field is basically the velocity of a data point (mass). If we want to be overly formal, the *flow* is the actual solution to the ODE and is defined as 
+
+* $\psi: \mathbb{R}^d \times [0,1] \rightarrow \mathbb{R}^d$, $(x_0,t) \rightarrow \psi_t (x_0)$
+* $\frac{d}{dt} \psi_{t}(x_0) = u_t(\psi_{t}(x_0))$ (flow ODE)
+* $\psi_{0}(x_0) = x_0$
+
+  
