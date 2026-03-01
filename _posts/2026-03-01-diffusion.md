@@ -60,3 +60,14 @@ $$dX_t = u_t(X_t)dt + \sigma_t dW_t$$
 
 $$X_0 = x_0$$
 
+(Note: I'm actually confused about the derivation here since somehow making the error term explicit and then sending the timestep to 0 recovers the derivative TODO: actually step into the analysis of why the error term goes to zero, since the technique is to make this explicit so then everything can be re-written in derivative form.)
+
+You can imagine an ODE as transporting a datapoint while an SDE transports or evolves data distributions. So any stochasticity in an ODE comes from the initial sampling of a clean image $X_0$ or noise $X_t$. Once the data point is sampled, the path it moves along to become noise is determined. For an SDE, on the other hand, once a data point $X_0$ is sampled, you can consider its path to be a path of evolving probability distributions.
+
+#### Simulating ODES and SDEs
+
+To get a better intuition for ODEs and SDEs, let's simulate them. For SDEs, the path is defined deterministically by the vector field $u(X,t)$ and stochastically by $\sigma(t)$. To simulate an SDE we sample $\epsilon_{t} \sim \mathcal{N}(0, I_d)$ and compute
+
+$$X_{t+h} = X_t + h u_t(X_t) + \sqrt{h} \sigma(t) \epsilon_t, \epsilon_t \sim \mathcal{N}(0,I_d)$$
+
+Here's an example of an SDE with a linear vector field, $u_(x,t) = -x-4$ and a linear brownian drift coefficient $\sigma(t) = 0.8t + 0.1$. 
