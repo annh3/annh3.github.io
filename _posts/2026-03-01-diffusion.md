@@ -92,3 +92,48 @@ And here's an example of the ODE version, i.e. the same vector field with no bro
 https://github.com/user-attachments/assets/769518c4-2146-435d-b74d-51e1236c6928
 
 
+Let's go through two examples on two different toy datasets of different diffusion approaches, learning to estimate noise via DDPM and learning to estimate score via Denoising Score Matching, then take a step back to work through the theory of deriving the training targets from the expressions for the path probabilities.
+
+TODO: train a version with flow modeling 
+
+Then, we'll talk about how to modulate image generation through a text prompt, and see what this looks like in practice in a multimodal architecture.
+
+### Example 1 - Learning a Mixture of Gaussians with Denoising Score Matching
+
+First, let's consider the mixture of gaussians defined by $x \sim \frac{1}{4} \mathcal{N}((-5,-5),I) + \frac{3}{4} \mathcal{N}((5,5),I)$. You can see from the plot that the data mass at $(-5,-5)$ is lighter than the mass at $(5,5)$.
+
+![mixture of gaussians](https://i.pinimg.com/736x/c6/cc/98/c6cc984065e48fe2f133075380509d66.jpg)
+
+For a mixture of gaussians, the score is nonlinear, but for one gaussian, parameterizing the score network as $W \cdot x + b$ is sufficient.
+
+Here's the proof. (TODO: write proof here.)
+
+We can estimate the score of the mixture of gaussians with a simple MLP, $s_{\theta}(x) = W_2 \cdot \sigma(W_1 \cdot x + b_1) + b_2$ where $\sigma$ is the softplus operator. 
+
+### Denoising Objective
+
+Define $q_{\sigma}(\tilde{x} | x)$ as the operator which applies gaussian noise with standard deviation $\sigma$ to the data point such that $q_{\sigma}(\tilde{x} | x) = \mathcal{N}(x, \sigma^2)$. 
+
+When the noise is small, $q_{\sigma}(x) \approx p_{data}(x)$ so that $s_{\theta^{*}} = \nabla_{x} \log p_{data}(x) \approx \nabla_{x} \log q_{\sigma}(x)$.
+
+So the denoising objective is 
+
+$$\frac{1}{2} \mathbb{E}_{q_{\sigma(\tilde{x}|x)p_{data}(x)}} [\| s_{\theta}(\tilde{x}) - \nabla_{\tilde{x}} \log q_{\sigma}(\tilde{x} | x)\|_2^{2}]$$
+
+And $\tilde{x} = x + \sigma z$ where $z \sim \mathcal{N}(x, \sigma^2)$ is the input to the score network. 
+
+We'll need an algebraic expression for the score, though another objective, the sliced score objective, torch's autograd function can be deployed in the objective function. 
+
+Since $q(\tilde{x}) = (2 \pi)^{D/2} det(\Sigma)^{-1/2} exp(-\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x - \mu))$,
+
+$$
+\begin{align*}
+\log q(\tilde{x}) &= - \frac{D}{2} \log(2 \pi) - \frac{1}{2} \log \det (\Sigma) + [-\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x - \mu)] \\
+\nabla_{\tilde{x}} \log q(\tilde(x)) &= \nabla_{\tilde{x}} [-\frac{1}{2}(\tilde{x} - x)^T \frac{1}{\sigma^2} I (\tilde{x} - x)] \\
+&= \nabla_{\tilde{x}} [-\frac{1}{2 \sigma^2}(\tilde{x} - x)^T(\tilde{x} - x)] \\
+&= - \frac{(\tilde{x} - x)}{\sigma^2} \\
+&= - \frac{z}{\sigma^2} \\
+\end{align*}
+$$
+
+But before looking at the experiment runs for this, let's understand the motivation behind adding noise. Theorem 2 from Estimation of Non-Normalized Statistical Models by Score Matching says that 
