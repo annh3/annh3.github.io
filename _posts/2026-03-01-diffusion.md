@@ -42,5 +42,6 @@ An SDE is stochastic. We can extend the ODE conceptual framework to SDEs by addi
 For those of you who are familiar with a random walk (imagine a graph where the where the edge transitions are probabilities and a particle flows along this graph), a Brownian motion can be thought of as a continuous random walk. Formally, a Brownian motion $W = (W_t)_{0 \le t \le 1}$ is a stochastic process such that $W_0 = 0$, the trajectories $t \rightarrow W_t$ are continuous and two conditions hold:
 
 1. **Normal Increments**, meaning $W_t - W_s \sim \mathcal{N}(0, (t-s)I_d)$. So that the Brownian Motion path is a Gaussian with variance increasing linearly in time. 
-2. **Independent Increments**. For $0 \le t_0 < t_1 < ... < t_n = 1$, $W_{t_1 - t_0}, ..., W_{t_{n} - t_{n-1}}$ are independent random variables. 
-  
+2. **Independent Increments**. For $0 \le t_0 < t_1 < ... < t_n = 1$, $W_{t_1 - t_0}, ..., W_{t_{n} - t_{n-1}}$ are independent random variables.
+
+![brownian motion](https://i.pinimg.com/736x/fc/da/69/fcda69f901d68216be9d83a01d39a413.jpg)
