@@ -80,3 +80,15 @@ Here's an example of an SDE with a linear vector field, $u_(x,t) = -x-4$ and a l
 
 https://github.com/user-attachments/assets/3745af23-1356-41ca-8b0f-ec95462e9a0e
 
+
+And here's an example of the ODE version, i.e. the same vector field with no brownian motion.
+
+<video width="100%" controls>
+  <source src="[https://annh3.github.io](https://github.com/annh3/annh3.github.io/raw/refs/heads/gh-pages/assets/simple_ode.mp4)" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+https://github.com/user-attachments/assets/769518c4-2146-435d-b74d-51e1236c6928
+
+
