@@ -71,3 +71,8 @@ To get a better intuition for ODEs and SDEs, let's simulate them. For SDEs, the 
 $$X_{t+h} = X_t + h u_t(X_t) + \sqrt{h} \sigma(t) \epsilon_t, \epsilon_t \sim \mathcal{N}(0,I_d)$$
 
 Here's an example of an SDE with a linear vector field, $u_(x,t) = -x-4$ and a linear brownian drift coefficient $\sigma(t) = 0.8t + 0.1$. 
+
+<video width="100%" controls>
+  <source src="[https://annh3.github.io](https://github.com/annh3/annh3.github.io/raw/refs/heads/gh-pages/assets/simple_sde.mp4)" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
