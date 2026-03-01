@@ -45,3 +45,18 @@ For those of you who are familiar with a random walk (imagine a graph where the 
 2. **Independent Increments**. For $0 \le t_0 < t_1 < ... < t_n = 1$, $W_{t_1 - t_0}, ..., W_{t_{n} - t_{n-1}}$ are independent random variables.
 
 ![brownian motion](https://i.pinimg.com/736x/fc/da/69/fcda69f901d68216be9d83a01d39a413.jpg)
+
+We basically amend the ODE by adding a Brownian motion increment. Since everything is now stochastic we cannot simply take the derivative of the vector field and must rewrite $\frac{d}{dt} X_t = u_{t}(X_t)$ as $h(X_{t+h} - X_t) = u_t(X_t) + R_t(h)$ where the error term $R_t(h)$ accounts for the approximation. The expression for the next position of the data point becomes:
+
+$$X_{t+h} = X_t + h \cdot u_t(X_t) + h \cdot R_t(h)$$
+
+To which we add the Brownian increment
+
+$$X_{t+h} = X_t + h \cdot u_t(X_t) + \sigma_t (W_{t+h} - W_t) + h \cdot R_t(h)$$
+
+When the time step goes to zero, the error term becomes negligible, so we can rewrite the SDE as
+
+$$dX_t = u_t(X_t)dt + \sigma_t dW_t$$
+
+$$X_0 = x_0$$
+
