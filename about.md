@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Hi! I'm Ann. I'm a research engineer at DeepMind in London working on language models and critical philosophies of A(G)I safety and ethics. I'm also deeply fascinated by the possibilities of cryptographic tools in shifting landscapes of trust and cooperation. I write about gender, creativity, and other things at [dinner guests](https://annhe.substack.com).
+Hi! I'm Ann. I'm mostly interested in multimodal generative ai, such as flow and diffusion models, for all modalities, though currently text to image or image sequence makes sense to me as it also draws on my passion for the [visual arts](https://www.annhephoto.com/), human perception, and also politics in a subtle way :)
