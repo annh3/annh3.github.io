@@ -18,6 +18,7 @@ Formally, the velocity models for the original rectified flow, $v(z,t) = \mathbb
 In general you can reflow as many times as you want but the benefits of this may fall off asymptotically, and usually just one reflow is fine. 
 
 ![[assets/reflow2.png]]
+(image from 1)
 
 ##### References
 

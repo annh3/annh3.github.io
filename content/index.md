@@ -20,6 +20,7 @@ And before that, I grew up in Texas, did a lot of fashion photography and ran cr
 ## Start here
 
 - [[diffusion/elbo_diffusion|ELBO for diffusion models]] — a review of the ELBO and connection to diffusion model objective.
+- [[diffusion/reflow|Why do we ReFlow Rectified Flow?]] — why do flow models go through a self distillation process to reduce their number of inference steps.
 - [[theory/pcps|How structured do pcp queries need to be?]] — musings on probabilistically checkable proofs, since I studied cs theory during my masters.
 
 ## Elsewhere
