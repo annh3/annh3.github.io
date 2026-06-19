@@ -1,40 +1,36 @@
----
-layout: default
-title: Home
----
-
-<div class="posts">
-{% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date: '%b %-d, %Y' }}</span>
-
-    {{ post.excerpt }}
-    {% if post.content contains site.excerpt_separator %}
-      <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-    {% endif %}
-  </div>
-{% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ann He</title>
+  <style>
+    body {
+      font-family: 'Source Sans Pro', system-ui, sans-serif;
+      max-width: 42rem;
+      margin: 6rem auto;
+      padding: 0 1.5rem;
+      line-height: 1.6;
+      color: #2b2b2b;
+      background: #faf8f8;
+    }
+    h1 { font-weight: 600; margin-bottom: 0.25rem; }
+    .tagline { color: #4e4e4e; margin-top: 0; }
+    a { color: #284b63; text-decoration: none; }
+    a:hover { color: #84a59d; }
+    nav { margin-top: 2rem; }
+    nav a { margin-right: 1.25rem; }
+  </style>
+</head>
+<body>
+  <h1>Ann He</h1>
+  <p class="tagline">ML researcher — generative models, diffusion, flow matching.</p>
+  <p>Notes and working theory live in my digital garden.</p>
+  <nav>
+    <a href="https://notes.annhe.xyz">Notes</a>
+    <a href="https://github.com/annh3">GitHub</a>
+    <a href="#">Scholar</a>
+    <a href="#">CV</a>
+  </nav>
+</body>
+</html>
