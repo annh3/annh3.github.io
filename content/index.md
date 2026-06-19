@@ -19,8 +19,8 @@ And before that, I grew up in Texas, did a lot of fashion photography and ran cr
 
 ## Start here
 
-- [[diffusion/index|Diffusion theory]] — the main thread: score matching,
-  SDEs, sampling, and guidance.
+- [[diffusion/elbo_diffusion|ELBO for diffusion models]] — a review of the ELBO and connection to diffusion model objective.
+- [[theory/pcps|How structured do pcp queries need to be?]] — musings on probabilistically checkable proofs, since I studied cs theory during my masters.
 
 ## Elsewhere
 
