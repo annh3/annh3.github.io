@@ -88,7 +88,7 @@ class LinearBetaScheduler:
 
 ## Baseline: sampling in ε-space
 
-First the ordinary path — predict noise, solve for $\hat z_0$, step. SD 1.5 runs
+First the normal path — predict noise, solve for $\hat z_0$, step. SD 1.5 runs
 with [DDIM](https://arxiv.org/abs/2010.02502) at 20–50 steps; the deterministic
 reverse process lets us skip timesteps because the marginals
 $q(x_t \mid x_0)$ stay valid. Classifier-free guidance mixes the conditional and
@@ -163,7 +163,11 @@ Same prompt, sampling entirely through the velocity reparameterization:
 
 ![[assets/velocity_epsilon_conversion_28_0.png]]
 
-The two images agree — the velocity reparameterization reproduces the
-ε-predictor's samples, as it must, since the conversion is exact. The payoff:
-SD 1.5 can now be dropped into a velocity-expecting pipeline (flow-matching
-samplers) without any retraining.
+The image adheres to the prompt
+
+### References
+
+1. https://arxiv.org/abs/2202.00512
+2. https://arxiv.org/abs/2112.10752
+3. https://arxiv.org/abs/2509.25170
+4. https://arxiv.org/abs/2010.02502
