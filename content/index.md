@@ -23,6 +23,8 @@ And before that, I grew up in Texas, did a lot of fashion photography and ran cr
 - [[diffusion/reflow|Why do we ReFlow Rectified Flow?]] — why do flow models go through a self distillation process to reduce their number of inference steps.
 - [[diffusion/velocity-prediction|Reparameterizing an ε-predictor as a v-predictor]] — how to convert an epsilon predictor into a velocity predictor.
 - [[theory/pcps|How structured do pcp queries need to be?]] — musings on probabilistically checkable proofs, since I studied cs theory during my masters.
+- [[transformers/rope|RoPE Embeddings (Multidimensional)]]RoPE embeddings.
+- [[transformers/tensor_parallel|Tensor Parallelism for Training Large Scale Models]] — tutorial on how to shard a model with tensor parallelism for distributed training.
 
 ## Elsewhere
 
